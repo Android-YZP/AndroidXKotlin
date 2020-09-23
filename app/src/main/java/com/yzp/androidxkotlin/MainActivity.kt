@@ -1,18 +1,14 @@
 package com.yzp.androidxkotlin
 
-import android.animation.ObjectAnimator
-import android.app.ProgressDialog.show
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.listener.OnItemLongClickListener
-import com.google.gson.Gson
-import com.yzp.androidxkotlin.kotlin.TestBean
+import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
+import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
     //list   携程  主界面框架   个人主页框架
@@ -36,15 +32,27 @@ class MainActivity : AppCompatActivity() {
         rv.layoutManager = linearLayoutManager
         val mainAdapter = MainAdapter(data)
         rv.adapter = mainAdapter
+
+
         mainAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
             log(data[position])
         })
+
         mainAdapter.setOnItemLongClickListener(OnItemLongClickListener { adapter, view, position ->
             log(data[position] + "hahahahaha")
             true
         })
-    }
 
+        refreshLayout.setOnRefreshListener(OnRefreshListener {
+            it.finishRefresh(3000)
+            log("setOnRefreshListener")
+        })
+
+        refreshLayout.setOnLoadMoreListener(OnLoadMoreListener {
+            it.finishLoadMore(3000)
+            log("setOnLoadMoreListener")
+        })
+    }
 
     fun log(s: String) {
         Log.e("===========>", s)
