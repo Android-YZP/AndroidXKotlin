@@ -14,9 +14,9 @@ class CoroutinesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutines)
         main9()
-
-
     }
+
+
 
     fun main9() = runBlocking {
         GlobalScope.launch {
