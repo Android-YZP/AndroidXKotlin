@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin
+package com.yzp.androidxkotlin.ui.home
 
 import com.yzp.androidxkotlin.http.*
 import com.yzp.mvvmlibrary.base.BaseModel

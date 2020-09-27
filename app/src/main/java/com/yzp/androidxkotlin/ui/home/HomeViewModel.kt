@@ -1,10 +1,11 @@
-package com.yzp.androidxkotlin
+package com.yzp.androidxkotlin.ui.home
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.yzp.androidxkotlin.http.BannerBean
 import com.yzp.androidxkotlin.http.BaseResult
+import com.yzp.androidxkotlin.ui.home.HomeRepository
 import com.yzp.mvvmlibrary.base.BaseViewModel
 import com.yzp.mvvmlibrary.http.ExceptionHandle
 import com.yzp.mvvmlibrary.http.ResponseThrowable

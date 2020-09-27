@@ -1,9 +1,10 @@
-package com.yzp.androidxkotlin
+package com.yzp.androidxkotlin.ui.main
 
 import android.view.View
 import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
+import com.yzp.androidxkotlin.R
 
 class MainAdapter(mData: MutableList<String>) : BaseQuickAdapter<String, BaseViewHolder>(
     R.layout.layout_item, mData

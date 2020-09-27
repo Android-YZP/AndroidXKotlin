@@ -11,10 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".HomeActivity"/>
+        <activity android:name=".ui.home.HomeActivity"/>
         <activity android:name=".kotlin.CoroutinesActivity" />
         <activity android:name=".kotlin.ListActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

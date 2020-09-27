@@ -1,6 +1,6 @@
 package com.yzp.androidxkotlin.http
 
-import com.yzp.androidxkotlin.http.Constant.BASE_URL
+import com.yzp.androidxkotlin.base.GlobalConfig.BASE_URL
 import com.yzp.mvvmlibrary.http.LoggingInterceptor
 import okhttp3.ConnectionPool
 import okhttp3.OkHttpClient

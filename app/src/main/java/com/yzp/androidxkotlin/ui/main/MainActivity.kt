@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin
+package com.yzp.androidxkotlin.ui.main
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,7 +9,8 @@ import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.listener.OnItemLongClickListener
 import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
-import com.yzp.androidxkotlin.kotlin.CoroutinesActivity
+import com.yzp.androidxkotlin.R
+import com.yzp.androidxkotlin.ui.home.HomeActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

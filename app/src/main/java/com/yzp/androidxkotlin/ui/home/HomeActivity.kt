@@ -1,12 +1,12 @@
-package com.yzp.androidxkotlin
+package com.yzp.androidxkotlin.ui.home
 
 import android.graphics.Color
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import com.google.gson.Gson
+import com.yzp.androidxkotlin.R
 import com.yzp.mvvmlibrary.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
