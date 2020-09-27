@@ -21,38 +21,38 @@ class MainActivity : AppCompatActivity() {
         initData()
     }
 
-
-
     private fun initData() {
         data.add("列表")
         data.add("携程")
         data.add("个人主页框架")
         data.add("主界面框架")
 
-        val linearLayoutManager = LinearLayoutManager(this)
-        rv.layoutManager = linearLayoutManager
-        val mainAdapter = MainAdapter(data)
-        rv.adapter = mainAdapter
 
+        with(rv) {
+            val linearLayoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = linearLayoutManager
+            val mainAdapter = MainAdapter(data)
+            adapter = mainAdapter
+            mainAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
+                log(data[position])
+            })
 
-        mainAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
-            log(data[position])
-        })
+            mainAdapter.setOnItemLongClickListener(OnItemLongClickListener { adapter, view, position ->
+                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                true
+            })
+        }
 
-        mainAdapter.setOnItemLongClickListener(OnItemLongClickListener { adapter, view, position ->
-            startActivity(Intent(this@MainActivity, HomeActivity::class.java))
-            true
-        })
-
-        refreshLayout.setOnRefreshListener(OnRefreshListener {
-            it.finishRefresh(3000)
-            log("setOnRefreshListener")
-        })
-
-        refreshLayout.setOnLoadMoreListener(OnLoadMoreListener {
-            it.finishLoadMore(3000)
-            log("setOnLoadMoreListener")
-        })
+        with(refreshLayout) {
+            setOnRefreshListener(OnRefreshListener {
+                it.finishRefresh(3000)
+                log("setOnRefreshListener")
+            })
+            setOnLoadMoreListener(OnLoadMoreListener {
+                it.finishLoadMore(3000)
+                log("setOnLoadMoreListener")
+            })
+        }
     }
 
     fun log(s: String) {
