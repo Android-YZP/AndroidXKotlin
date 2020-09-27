@@ -62,4 +62,10 @@ dependencies {
     implementation 'cat.ereza:customactivityoncrash:2.3.0'
     //微信开源项目，替代SP
     implementation 'com.tencent:mmkv:1.0.22'
+    //加载webView
+    implementation 'com.just.agentweb:agentweb-androidx:4.1.4' // (必选)
+    implementation 'com.just.agentweb:filechooser-androidx:4.1.4'// (可选)
+    implementation 'com.download.library:downloader-androidx:4.1.4'// (可选)
+
+
 }
