@@ -1,5 +1,6 @@
 package com.yzp.androidxkotlin.ui.home
 
+import com.yzp.androidxkotlin.api.ApiService
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.bean.BannerBean
 import com.yzp.androidxkotlin.http.*
@@ -11,7 +12,7 @@ import com.yzp.mvvmlibrary.base.BaseModel
 class HomeRepository private constructor(
 ) : BaseModel() {
 
-    private val mService by lazy { RetrofitClient.getInstance().create(HomeService::class.java) }
+    private val mService by lazy { RetrofitClient.getInstance().create(ApiService::class.java) }
 
     suspend fun getBannerData(): BaseResult<List<BannerBean>> {
         return mService.getBanner()
@@ -33,10 +34,8 @@ class HomeRepository private constructor(
 
 
     companion object {
-
         @Volatile
         private var INSTANCE: HomeRepository? = null
-
         fun getInstance() =
             INSTANCE ?: synchronized(this) {
                 INSTANCE ?: HomeRepository().also { INSTANCE = it }

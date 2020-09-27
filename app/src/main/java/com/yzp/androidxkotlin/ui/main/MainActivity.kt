@@ -27,12 +27,10 @@ class MainActivity : AppCompatActivity() {
         data.add("个人主页框架")
         data.add("主界面框架")
 
-
         with(rv) {
             val linearLayoutManager = LinearLayoutManager(this@MainActivity)
             layoutManager = linearLayoutManager
             val mainAdapter = MainAdapter(data)
-            adapter = mainAdapter
             mainAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
                 log(data[position])
             })
@@ -41,6 +39,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(Intent(this@MainActivity, HomeActivity::class.java))
                 true
             })
+            adapter = mainAdapter
         }
 
         with(refreshLayout) {
