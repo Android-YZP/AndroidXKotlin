@@ -94,7 +94,6 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
         dialog?.run { if (isShowing) dismiss() }
     }
 
-
     /**
      * 创建 ViewModel
      */
