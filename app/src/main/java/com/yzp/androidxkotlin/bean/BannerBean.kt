@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.http
+package com.yzp.androidxkotlin.bean
 
 /**
  */

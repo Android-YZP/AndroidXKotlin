@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.http
+package com.yzp.androidxkotlin.base
 
 import com.google.gson.annotations.SerializedName
 import com.yzp.mvvmlibrary.base.IBaseResponse

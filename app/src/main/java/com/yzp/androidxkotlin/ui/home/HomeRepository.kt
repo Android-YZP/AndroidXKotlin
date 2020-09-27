@@ -1,5 +1,7 @@
 package com.yzp.androidxkotlin.ui.home
 
+import com.yzp.androidxkotlin.base.BaseResult
+import com.yzp.androidxkotlin.bean.BannerBean
 import com.yzp.androidxkotlin.http.*
 import com.yzp.mvvmlibrary.base.BaseModel
 

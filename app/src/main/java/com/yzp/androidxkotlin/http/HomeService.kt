@@ -1,10 +1,11 @@
 package com.yzp.androidxkotlin.http
 
+import com.yzp.androidxkotlin.base.BaseResult
+import com.yzp.androidxkotlin.bean.BannerBean
 import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.Query
-import java.util.*
 
 /**
  */
