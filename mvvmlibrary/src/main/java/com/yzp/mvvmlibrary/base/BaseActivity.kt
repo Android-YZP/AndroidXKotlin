@@ -7,11 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.afollestad.materialdialogs.MaterialDialog
-import com.afollestad.materialdialogs.customview.customView
-import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.blankj.utilcode.util.ToastUtils
-import com.yzp.mvvmlibrary.R
 import java.lang.reflect.ParameterizedType
 
 /**
@@ -22,7 +18,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
 
     protected var mBinding: DB? = null
 
-    private var dialog: MaterialDialog? = null
+    private var dialog: LoadingDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -78,10 +74,7 @@ abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompa
      */
     private fun showLoading() {
         if (dialog == null) {
-            dialog = MaterialDialog(this)
-                .cancelable(false)
-                .cornerRadius(8f)
-                .lifecycleOwner(this)
+            dialog = LoadingDialog(this)
         }
         dialog?.show()
 

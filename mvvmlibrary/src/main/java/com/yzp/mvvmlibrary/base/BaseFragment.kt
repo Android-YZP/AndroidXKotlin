@@ -10,9 +10,6 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-import com.afollestad.materialdialogs.MaterialDialog
-import com.afollestad.materialdialogs.customview.customView
-import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
 import com.blankj.utilcode.util.ToastUtils
 import java.lang.reflect.ParameterizedType
 
@@ -27,7 +24,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
     //是否第一次加载
     private var isFirst: Boolean = true
 
-    private var dialog: MaterialDialog? = null
+    private var dialog: LoadingDialog? = null
 
 
     override fun onCreateView(
@@ -103,12 +100,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
      */
     private fun showLoading() {
         if (dialog == null) {
-            dialog = context?.let {
-                MaterialDialog(it)
-                    .cancelable(false)
-                    .cornerRadius(8f)
-                    .lifecycleOwner(this)
-            }
+            dialog = LoadingDialog(context!!)
         }
         dialog?.show()
     }
