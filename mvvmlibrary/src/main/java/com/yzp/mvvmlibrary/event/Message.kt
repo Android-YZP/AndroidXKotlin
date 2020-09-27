@@ -1,8 +1,6 @@
 package com.yzp.mvvmlibrary.event
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/11/13
  */
 class Message @JvmOverloads constructor(
     var code: Int = 0,

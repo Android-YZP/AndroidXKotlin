@@ -17,8 +17,6 @@ import com.blankj.utilcode.util.ToastUtils
 import java.lang.reflect.ParameterizedType
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/11/01
  */
 abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment() {
 

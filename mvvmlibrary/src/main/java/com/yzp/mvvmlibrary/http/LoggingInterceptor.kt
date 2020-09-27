@@ -14,8 +14,6 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 
 /**
- * @auther : Aleyn
- * time   : 2020/07/24
  */
 class LoggingInterceptor(
     private var printLevel: Level = Level.ALL,

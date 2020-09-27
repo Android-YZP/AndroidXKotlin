@@ -1,8 +1,6 @@
 package com.yzp.mvvmlibrary.base
 
 /**
- *   @auther : Aleyn
- *   time   : 2020/01/13
  */
 interface IBaseResponse<T> {
     fun code(): Int

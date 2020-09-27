@@ -13,8 +13,6 @@ import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/11/01
  */
 open class BaseViewModel : AndroidViewModel(Utils.getApp()), LifecycleObserver {
 

@@ -1,8 +1,6 @@
 package com.yzp.mvvmlibrary.http
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/08/12
  */
 enum class ERROR(private val code: Int, private val err: String) {
 

@@ -1,8 +1,6 @@
 package com.yzp.androidxkotlin.http
 
 /**
- * @auther : Aleyn
- * time   : 2019/11/01
  */
 
 

@@ -5,8 +5,6 @@ import com.yzp.mvvmlibrary.base.BaseModel
 
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/10/29
  */
 class HomeRepository private constructor(
 ) : BaseModel() {

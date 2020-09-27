@@ -6,8 +6,6 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/11/07
  */
 object ImageAdapter {
 

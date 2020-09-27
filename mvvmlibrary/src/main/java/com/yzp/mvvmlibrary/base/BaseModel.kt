@@ -4,8 +4,6 @@ import com.yzp.mvvmlibrary.http.ResponseThrowable
 
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/11/01
  */
 abstract class BaseModel {
 

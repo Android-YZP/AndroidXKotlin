@@ -6,8 +6,6 @@ import com.yzp.mvvmlibrary.app.GlobalConfig
 import com.yzp.mvvmlibrary.app.MVVM
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/11/12
  */
 open class BaseApplication : Application() {
 

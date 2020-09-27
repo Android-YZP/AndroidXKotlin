@@ -15,8 +15,6 @@ import com.yzp.mvvmlibrary.R
 import java.lang.reflect.ParameterizedType
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/11/01
  */
 abstract class BaseActivity<VM : BaseViewModel, DB : ViewDataBinding> : AppCompatActivity() {
 

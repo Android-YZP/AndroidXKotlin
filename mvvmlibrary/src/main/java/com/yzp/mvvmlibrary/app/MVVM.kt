@@ -1,8 +1,6 @@
 package com.yzp.mvvmlibrary.app
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/11/12
  */
 object MVVM {
 

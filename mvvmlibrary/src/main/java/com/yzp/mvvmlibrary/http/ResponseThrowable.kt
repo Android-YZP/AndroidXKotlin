@@ -3,8 +3,6 @@ package com.yzp.mvvmlibrary.http
 import com.yzp.mvvmlibrary.base.IBaseResponse
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/08/12
  */
 class ResponseThrowable : Exception {
     var code: Int

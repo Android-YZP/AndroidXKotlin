@@ -7,8 +7,6 @@ import okhttp3.Request
 import okhttp3.internal.platform.Platform.INFO
 
 /**
- * @auther : Aleyn
- * time   : 2020/07/24
  */
 class DefaultPrinter(private val logger: LoggingInterceptor.Logger = LoggingInterceptor.Logger.DEFAULT) :
     FormatPrinter {

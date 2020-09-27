@@ -7,8 +7,6 @@ import retrofit2.http.Query
 import java.util.*
 
 /**
- *   @auther : Aleyn
- *   time   : 2019/10/29
  */
 interface HomeService {
 
