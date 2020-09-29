@@ -26,21 +26,24 @@ class WorkManagerActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
             .setRequiredNetworkType(NetworkType.CONNECTED) //网络链接的时候使用,避免各种网络判断,省时省力
             .build()
 
-        //把 MyWorker 包装成 OneTimeWorkRequest 执行一次
 
         //把 MyWorker 包装成 OneTimeWorkRequest 执行一次
         val request1 = OneTimeWorkRequest.Builder(MyWork::class.java)
             .setConstraints(build)
             .build()
-        val request3 = OneTimeWorkRequest.Builder(MyWork::class.java)
-            .setConstraints(build)
-            .build()
+
         val request2 = OneTimeWorkRequest.Builder(MyWork::class.java)
             .setConstraints(build)
             .build()
-        //链式调用
+
+        val request3 = OneTimeWorkRequest.Builder(MyWork::class.java)
+            .setConstraints(build)
+            .build()
+
+
         //链式调用
         WorkManager.getInstance().beginWith(request1).then(request2).then(request3).enqueue()
+
         //获取状态
         WorkManager.getInstance().getWorkInfoByIdLiveData(request1.id).observe(this, { workInfo ->
             Log.e("------------", workInfo.state.toString() + "")

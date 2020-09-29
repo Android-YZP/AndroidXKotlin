@@ -20,6 +20,7 @@ import com.yzp.androidxkotlin.ui.lifecycle.Lifecycle
 import com.yzp.androidxkotlin.ui.lifecycle.LifecycleActivity
 import com.yzp.androidxkotlin.ui.livedataviewmodel.LiveDataViewModelActivity
 import com.yzp.androidxkotlin.ui.updateapk.UpdateActivity
+import com.yzp.androidxkotlin.ui.workmanager.WorkManagerActivity
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -68,7 +69,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         data.add(MainBean("Lifecycle的使用", LifecycleActivity::class.java))
         data.add(MainBean("LiveDataViewModel的使用", LiveDataViewModelActivity::class.java))
         data.add(MainBean("Navigation的使用", CoroutineActivity::class.java))
-        data.add(MainBean("WorkManager的使用", CoroutineActivity::class.java))
+        data.add(MainBean("WorkManager的使用", WorkManagerActivity::class.java))
         data.add(MainBean("DataBinding的使用", DataBindingActivity::class.java))
         data.add(MainBean("Room的使用", CoroutineActivity::class.java))
         data.add(MainBean("个人主页框架", CoroutineActivity::class.java))
