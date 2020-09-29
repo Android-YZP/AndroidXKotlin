@@ -6,7 +6,7 @@ import retrofit2.http.*
 import java.util.*
 
 /**
- * 描述　: 网络API
+ * 描述　: WanAndroid API
  */
 interface ApiService {
 
