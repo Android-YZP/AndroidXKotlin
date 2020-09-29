@@ -14,6 +14,7 @@ import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.bean.MainBean
 import com.yzp.androidxkotlin.ui.coroutines.CoroutineActivity
+import com.yzp.androidxkotlin.ui.databinding.DataBindingActivity
 import com.yzp.androidxkotlin.ui.home.HomeActivity
 import com.yzp.androidxkotlin.ui.updateapk.UpdateActivity
 import com.yzp.mvvmlibrary.base.BaseActivity
@@ -65,7 +66,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         data.add(MainBean("LiveDataViewModel的使用", CoroutineActivity::class.java))
         data.add(MainBean("Navigation的使用", CoroutineActivity::class.java))
         data.add(MainBean("WorkManager的使用", CoroutineActivity::class.java))
-        data.add(MainBean("DataBinding的使用", CoroutineActivity::class.java))
+        data.add(MainBean("DataBinding的使用", DataBindingActivity::class.java))
         data.add(MainBean("Room的使用", CoroutineActivity::class.java))
         data.add(MainBean("个人主页框架", CoroutineActivity::class.java))
         data.add(MainBean("列表", CoroutineActivity::class.java))
