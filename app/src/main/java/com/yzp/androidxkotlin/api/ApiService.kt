@@ -10,11 +10,6 @@ import java.util.*
  */
 interface ApiService {
 
-    companion object {
-        const val SERVER_URL = "https://wanandroid.com/"
-        const val SERVER_URL1 = "https://wanandroid.com/"
-    }
-
     /**
      * 登录
      */

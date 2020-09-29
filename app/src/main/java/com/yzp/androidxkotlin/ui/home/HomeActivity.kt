@@ -21,7 +21,7 @@ class HomeActivity : BaseActivity<HomeViewModel, ViewDataBinding>() {
     override fun initView(savedInstanceState: Bundle?) {
         with(tv) {
             setTextColor(Color.parseColor("#0000ff"))
-            setTextSize(18.0f)
+            textSize = 18.0f
             setOnClickListener(View.OnClickListener {
                 viewModel.getBanner()
             })

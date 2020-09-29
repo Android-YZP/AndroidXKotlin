@@ -36,7 +36,6 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
                 val title = data[position].title
                 startActivity(Intent(this@MainActivity, data[position].aClass).apply {
                     putExtra("title", title)
-                    ToastUtils.showShort(title)
                 })
             })
 
