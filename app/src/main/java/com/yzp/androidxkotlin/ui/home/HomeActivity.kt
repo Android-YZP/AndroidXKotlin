@@ -3,6 +3,7 @@ package com.yzp.androidxkotlin.ui.home
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import com.google.gson.Gson
@@ -18,6 +19,9 @@ class HomeActivity  : BaseActivity<HomeViewModel, ViewDataBinding>() {
         tv.apply {
             setTextColor(Color.parseColor("#0000ff"))
             setTextSize(18.0f)
+            setOnClickListener(View.OnClickListener {
+                viewModel.getBanner()
+            })
         }
     }
 

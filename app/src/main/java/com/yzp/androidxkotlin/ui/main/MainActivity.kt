@@ -67,7 +67,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         data.add(MainBean("列表", CoroutineActivity::class.java))
         data.add(MainBean("WebView", CoroutineActivity::class.java))
         data.add(MainBean("Room的使用", CoroutineActivity::class.java))
-        data.add(MainBean("网络请求缓存的使用", CoroutineActivity::class.java))
+        data.add(MainBean("网络请求缓存的使用", HomeActivity::class.java))
         data.add(MainBean("Android版本适配", CoroutineActivity::class.java))
         data.add(MainBean("Android权限申请", CoroutineActivity::class.java))
         data.add(MainBean("文件下载/上传", CoroutineActivity::class.java))
