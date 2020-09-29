@@ -16,5 +16,4 @@ class MainAdapter(mData: MutableList<MainBean>) : BaseQuickAdapter<MainBean, Bas
         textView.text = item.title
     }
 
-
 }

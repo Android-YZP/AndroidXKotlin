@@ -20,9 +20,9 @@ import com.yzp.mvvmlibrary.base.NoViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
-    var data = ArrayList<MainBean>()
+    private var data = ArrayList<MainBean>()
 
-    val mainAdapter = MainAdapter(data)
+    private val mainAdapter = MainAdapter(data)
 
     override fun layoutId(): Int = R.layout.activity_main;
 
@@ -34,12 +34,10 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
             mainAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
                 val title = data[position].title
-
                 startActivity(Intent(this@MainActivity, data[position].aClass).apply {
                     putExtra("title", title)
                     ToastUtils.showShort(title)
                 })
-
             })
 
             mainAdapter.setOnItemLongClickListener(OnItemLongClickListener { adapter, view, position ->

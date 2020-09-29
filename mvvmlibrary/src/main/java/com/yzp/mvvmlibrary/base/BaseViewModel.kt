@@ -111,8 +111,12 @@ open class BaseViewModel : AndroidViewModel(Utils.getApp()), LifecycleObserver {
             try {
                 block()
             } catch (e: Throwable) {
-//                val string = (e as HttpException).response()!!.errorBody()!!.string()
-//                defUI.msgEvent.postValue(string)
+
+                if (e.message!!.contains("400")) {
+                    val string = (e as HttpException).response()!!.errorBody()!!.string()
+                    defUI.toastEvent.postValue(string)
+                }
+
                 error(ExceptionHandle.handleException(e))
             } finally {
                 complete()

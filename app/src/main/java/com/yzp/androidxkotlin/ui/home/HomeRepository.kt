@@ -23,12 +23,12 @@ class HomeRepository private constructor(
         return mService.login(
             Authorization.getInstance().getAuthorization(),
             Authorization.getInstance().getContentType(),
-            "000000",
+            "475335",
             "password",
-            "admin",
-            HexUtil.md5("admin"),
+            "yzp",
+            HexUtil.md5("123456"),
             "all",
-            "000000"
+            "475335"
         )
     }
 

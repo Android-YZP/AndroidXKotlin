@@ -9,11 +9,12 @@ import androidx.lifecycle.Observer
 import com.google.gson.Gson
 import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.base.GlobalConfig.BASE_URL_JT
+import com.yzp.androidxkotlin.base.GlobalConfig.BASE_URL_WMS
 import com.yzp.mvvmlibrary.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import me.jessyan.retrofiturlmanager.RetrofitUrlManager
 
-class HomeActivity  : BaseActivity<HomeViewModel, ViewDataBinding>() {
+class HomeActivity : BaseActivity<HomeViewModel, ViewDataBinding>() {
 
     override fun layoutId(): Int = R.layout.activity_home
 
@@ -29,14 +30,17 @@ class HomeActivity  : BaseActivity<HomeViewModel, ViewDataBinding>() {
 
     override fun initData() {
         // 改变URL
-        // RetrofitUrlManager.getInstance().putDomain("douban", BASE_URL_JT);
+        RetrofitUrlManager.getInstance().putDomain("douban", BASE_URL_WMS);
         viewModel.getBanner()
             .observe(this, Observer {
                 Log.e("====", Gson().toJson(it))
                 tv.text = Gson().toJson(it)
             })
 
-        viewModel.login()
+        viewModel.login().observe(this, Observer {
+            Log.e("====", Gson().toJson(it))
+            tv.text = Gson().toJson(it)
+        })
     }
 
     override fun handleEvent(msg: String) {
