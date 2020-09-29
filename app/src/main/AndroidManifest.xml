@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.workmanager.WorkManagerActivity"></activity>
+        <activity
+            android:name=".ui.navigation.NavActivity"
+            android:label="@string/title_activity_nav"></activity>
+        <activity android:name=".ui.workmanager.WorkManagerActivity" />
         <activity android:name=".ui.navigation.NavigationActivity" />
         <activity android:name=".ui.livedataviewmodel.LiveDataViewModelActivity" />
         <activity android:name=".ui.lifecycle.LifecycleActivity" />
