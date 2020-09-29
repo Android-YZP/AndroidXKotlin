@@ -10,6 +10,7 @@ import androidx.work.WorkManager
 import com.yzp.androidxkotlin.R
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
+import kotlinx.android.synthetic.main.activity_work_manager.*
 
 class WorkManagerActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
@@ -47,6 +48,8 @@ class WorkManagerActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         //获取状态
         WorkManager.getInstance().getWorkInfoByIdLiveData(request1.id).observe(this, { workInfo ->
             Log.e("------------", workInfo.state.toString() + "")
+            tv_text.text = tv_text.text.toString() + "\n" + workInfo.state.toString()
+
         })
     }
 
