@@ -68,7 +68,10 @@ dependencies {
     implementation 'com.download.library:downloader-androidx:4.1.4'// (可选)
     //多URL设置
     implementation 'me.jessyan:retrofit-url-manager:1.4.0'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+
+    //workManager
+    implementation "android.arch.work:work-runtime:1.0.1"
+    implementation "android.arch.work:work-firebase:1.0.0-alpha11"
+
 
 }
