@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.listener.OnItemLongClickListener
@@ -11,17 +12,47 @@ import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.ui.home.HomeActivity
+import com.yzp.mvvmlibrary.base.BaseActivity
+import com.yzp.mvvmlibrary.base.NoViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
     var data = ArrayList<String>()
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        initData()
+
+    val mainAdapter = MainAdapter(data)
+
+    override fun layoutId(): Int = R.layout.activity_main;
+
+    override fun initView(savedInstanceState: Bundle?) {
+
+        with(rv) {
+            val linearLayoutManager = LinearLayoutManager(this@MainActivity)
+            layoutManager = linearLayoutManager
+
+            mainAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
+                log(data[position])
+            })
+
+            mainAdapter.setOnItemLongClickListener(OnItemLongClickListener { adapter, view, position ->
+                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                true
+            })
+            adapter = mainAdapter
+        }
+
+        with(refreshLayout) {
+            setOnRefreshListener(OnRefreshListener {
+                finishRefresh(3000)
+                log("setOnRefreshListener")
+            })
+            setOnLoadMoreListener(OnLoadMoreListener {
+                finishLoadMore(3000)
+                log("setOnLoadMoreListener")
+            })
+        }
     }
 
-    private fun initData() {
+    override fun initData() {
         data.add("携程")
         data.add("个人主页框架")
         data.add("轮播图")
@@ -36,38 +67,16 @@ class MainActivity : AppCompatActivity() {
         data.add("音频播放")
         data.add("视频播放")
         data.add("地图")
-        data.add("USB/蓝牙/Wifi")
+        data.add("USB")
+        data.add("蓝牙")
+        data.add("Wifi")
         data.add("串口通信")
-
-        with(rv) {
-            val linearLayoutManager = LinearLayoutManager(this@MainActivity)
-            layoutManager = linearLayoutManager
-            val mainAdapter = MainAdapter(data)
-            mainAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
-                log(data[position])
-            })
-
-            mainAdapter.setOnItemLongClickListener(OnItemLongClickListener { adapter, view, position ->
-                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
-                true
-            })
-            adapter = mainAdapter
-        }
-
-        with(refreshLayout) {
-            setOnRefreshListener(OnRefreshListener {
-                it.finishRefresh(3000)
-                log("setOnRefreshListener")
-            })
-            setOnLoadMoreListener(OnLoadMoreListener {
-                it.finishLoadMore(3000)
-                log("setOnLoadMoreListener")
-            })
-        }
+        mainAdapter.notifyDataSetChanged()
     }
 
     fun log(s: String) {
         Log.e("===========>", s)
     }
+
 
 }
