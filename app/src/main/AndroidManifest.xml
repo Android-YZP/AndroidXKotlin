@@ -5,15 +5,20 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
+        android:name=".base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/net_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name=".base.BaseApplication"
-        android:networkSecurityConfig="@xml/net_config"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.wifi.WifiActivity"/>
+        <activity android:name=".ui.workmanager.WorkManagerActivity"></activity>
+        <activity android:name=".ui.navigation.NavigationActivity" />
+        <activity android:name=".ui.livedataviewmodel.LiveDataViewModelActivity" />
+        <activity android:name=".ui.lifecycle.LifecycleActivity" />
+        <activity android:name=".ui.databinding.DataBindingActivity" />
+        <activity android:name=".ui.wifi.WifiActivity" />
         <activity android:name=".ui.webview.WebViewActivity" />
         <activity android:name=".ui.video.VideoActivity" />
         <activity android:name=".ui.usb.UsbActivity" />
