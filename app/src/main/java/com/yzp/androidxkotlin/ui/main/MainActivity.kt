@@ -6,18 +6,21 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blankj.utilcode.util.ToastUtils
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.listener.OnItemLongClickListener
 import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import com.yzp.androidxkotlin.R
+import com.yzp.androidxkotlin.bean.MainBean
+import com.yzp.androidxkotlin.ui.coroutines.CoroutineActivity
 import com.yzp.androidxkotlin.ui.home.HomeActivity
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
-    var data = ArrayList<String>()
+    var data = ArrayList<MainBean>()
 
     val mainAdapter = MainAdapter(data)
 
@@ -30,7 +33,13 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
             layoutManager = linearLayoutManager
 
             mainAdapter.setOnItemClickListener(OnItemClickListener { adapter, view, position ->
-                log(data[position])
+                val title = data[position].title
+
+                startActivity(Intent(this@MainActivity, data[position].aClass).apply {
+                    putExtra("title", title)
+                    ToastUtils.showShort(title)
+                })
+
             })
 
             mainAdapter.setOnItemLongClickListener(OnItemLongClickListener { adapter, view, position ->
@@ -42,35 +51,33 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
         with(refreshLayout) {
             setOnRefreshListener(OnRefreshListener {
-                finishRefresh(3000)
+                finishRefresh(300)
                 log("setOnRefreshListener")
             })
             setOnLoadMoreListener(OnLoadMoreListener {
-                finishLoadMore(3000)
+                finishLoadMore(300)
                 log("setOnLoadMoreListener")
             })
         }
     }
 
     override fun initData() {
-        data.add("携程")
-        data.add("个人主页框架")
-        data.add("轮播图")
-        data.add("列表")
-        data.add("WebView")
-        data.add("Room的使用")
-        data.add("网络请求缓存的使用")
-        data.add("Android版本适配")
-        data.add("Android权限申请")
-        data.add("文件下载/上传")
-        data.add("图片选择")
-        data.add("音频播放")
-        data.add("视频播放")
-        data.add("地图")
-        data.add("USB")
-        data.add("蓝牙")
-        data.add("Wifi")
-        data.add("串口通信")
+        data.add(MainBean("携程", CoroutineActivity::class.java))
+        data.add(MainBean("个人主页框架", CoroutineActivity::class.java))
+        data.add(MainBean("列表", CoroutineActivity::class.java))
+        data.add(MainBean("WebView", CoroutineActivity::class.java))
+        data.add(MainBean("Room的使用", CoroutineActivity::class.java))
+        data.add(MainBean("网络请求缓存的使用", CoroutineActivity::class.java))
+        data.add(MainBean("Android版本适配", CoroutineActivity::class.java))
+        data.add(MainBean("Android权限申请", CoroutineActivity::class.java))
+        data.add(MainBean("文件下载/上传", CoroutineActivity::class.java))
+        data.add(MainBean("图片选择", CoroutineActivity::class.java))
+        data.add(MainBean("音频播放", CoroutineActivity::class.java))
+        data.add(MainBean("视频播放", CoroutineActivity::class.java))
+        data.add(MainBean("地图", CoroutineActivity::class.java))
+        data.add(MainBean("蓝牙", CoroutineActivity::class.java))
+        data.add(MainBean("Wifi", CoroutineActivity::class.java))
+        data.add(MainBean("串口通信", CoroutineActivity::class.java))
         mainAdapter.notifyDataSetChanged()
     }
 
@@ -80,3 +87,4 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
 
 }
+
