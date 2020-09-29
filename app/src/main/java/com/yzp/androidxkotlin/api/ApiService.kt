@@ -25,7 +25,10 @@ interface ApiService {
         @Field("password") pwd: String
     ): BaseResult<Objects>
 
+
+
     //用户登录
+    @Headers("Domain-Name: douban") // Add the Domain-Name header
     @POST("jwms-auth/oauth/token")
     suspend fun login(
         @Header("Authorization") authorization: String?,

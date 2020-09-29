@@ -10,8 +10,9 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/net_config"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.wifi.WifiActivity"></activity>
+        <activity android:name=".ui.wifi.WifiActivity"/>
         <activity android:name=".ui.webview.WebViewActivity" />
         <activity android:name=".ui.video.VideoActivity" />
         <activity android:name=".ui.usb.UsbActivity" />

@@ -65,9 +65,8 @@ dependencies {
     //加载webView
     implementation 'com.just.agentweb:agentweb-androidx:4.1.4' // (必选)
     implementation 'com.just.agentweb:filechooser-androidx:4.1.4'// (可选)
-    implementation 'com.download.library:downloader-androidx:4.1.4'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'// (可选)
-
+    implementation 'com.download.library:downloader-androidx:4.1.4'// (可选)
+    //多URL设置
+    implementation 'me.jessyan:retrofit-url-manager:1.4.0'
 
 }
