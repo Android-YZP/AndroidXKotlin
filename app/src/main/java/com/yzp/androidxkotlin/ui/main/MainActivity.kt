@@ -15,6 +15,7 @@ import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.bean.MainBean
 import com.yzp.androidxkotlin.ui.coroutines.CoroutineActivity
 import com.yzp.androidxkotlin.ui.databinding.DataBindingActivity
+import com.yzp.androidxkotlin.ui.dialog.DialogActivity
 import com.yzp.androidxkotlin.ui.home.HomeActivity
 import com.yzp.androidxkotlin.ui.lifecycle.Lifecycle
 import com.yzp.androidxkotlin.ui.lifecycle.LifecycleActivity
@@ -26,6 +27,10 @@ import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
+/**
+ * 接下来要做的就是wanandroidAPP,估计需要1个月完成,然后整理Android最新知识点,然后自考.一直到明年年底,完成自考.
+ * 到明年年底 changer job
+ */
 class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
     private var data = ArrayList<MainBean>()
 
@@ -76,6 +81,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         data.add(MainBean("个人主页框架", CoroutineActivity::class.java))
         data.add(MainBean("列表", CoroutineActivity::class.java))
         data.add(MainBean("网络请求", HomeActivity::class.java))
+        data.add(MainBean("对话框", DialogActivity::class.java))
         data.add(MainBean("版本更新", UpdateActivity::class.java))
         data.add(MainBean("Android版本适配", CoroutineActivity::class.java))
         data.add(MainBean("Android权限申请", CoroutineActivity::class.java))
