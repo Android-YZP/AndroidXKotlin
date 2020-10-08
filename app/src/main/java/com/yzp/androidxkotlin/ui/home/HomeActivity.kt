@@ -41,6 +41,9 @@ class HomeActivity : BaseActivity<HomeViewModel, ViewDataBinding>() {
             Log.e("====", Gson().toJson(it))
             tv.text = Gson().toJson(it)
         })
+
+
+
     }
 
     override fun handleEvent(msg: String) {
