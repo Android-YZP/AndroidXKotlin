@@ -1,6 +1,7 @@
 package com.yzp.androidxkotlin.base
 
 import cat.ereza.customactivityoncrash.config.CaocConfig
+import com.yzp.androidxkotlin.ui.ErrorActivity
 import com.yzp.androidxkotlin.ui.main.MainActivity
 import com.yzp.mvvmlibrary.app.App
 
@@ -18,7 +19,7 @@ class BaseApplication : App() {
             .trackActivities(true) //是否必须跟踪用户访问的活动及其生命周期调用 default: false
             .minTimeBetweenCrashesMs(2000) //应用程序崩溃之间必须经过的时间 default: 3000
             .restartActivity(MainActivity::class.java) // 重启的activity
-//            .errorActivity(ErrorActivity::class.java) //发生错误跳转的activity
+            .errorActivity(ErrorActivity::class.java) //发生错误跳转的activity
             .eventListener(null) //允许你指定事件侦听器，以便在库显示错误活动 default: null
             .apply()
     }
