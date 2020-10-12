@@ -1,8 +1,9 @@
 package com.yzp.androidxkotlin.ui.main
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
+import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.blankj.utilcode.util.LogUtils
@@ -10,15 +11,17 @@ import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.listener.OnItemLongClickListener
 import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
+import com.youth.banner.Banner
+import com.youth.banner.transformer.ScaleInTransformer
 import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.ui.CoroutineActivity
-import com.yzp.androidxkotlin.ui.databinding.DataBindingActivity
 import com.yzp.androidxkotlin.ui.DialogActivity
+import com.yzp.androidxkotlin.ui.UpdateActivity
+import com.yzp.androidxkotlin.ui.databinding.DataBindingActivity
 import com.yzp.androidxkotlin.ui.home.HomeActivity
 import com.yzp.androidxkotlin.ui.lifecycle.LifecycleActivity
 import com.yzp.androidxkotlin.ui.livedataviewmodel.LiveDataViewModelActivity
 import com.yzp.androidxkotlin.ui.navigation.NavActivity
-import com.yzp.androidxkotlin.ui.UpdateActivity
 import com.yzp.androidxkotlin.ui.workmanager.WorkManagerActivity
 import com.yzp.androidxkotlin.wanandroidui.LoginActivity
 import com.yzp.mvvmlibrary.base.BaseActivity
@@ -26,7 +29,9 @@ import com.yzp.mvvmlibrary.base.NoViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
- * 接下来要做的就是wanandroidAPP,估计需要1个月完成,然后整理Android最新知识点,然后自考.一直到明年年底,完成自考.
+ * 接下来要做的就是wanandroidAPP,
+ * 估计需要1个月完成,然后整理Android最新知识点,
+ * 然后自考.一直到明年年底,完成自考.
  * 到明年年底 changer job
  */
 class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
@@ -36,8 +41,8 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
     override fun layoutId(): Int = R.layout.activity_main;
 
+    @SuppressLint("SetTextI18n")
     override fun initView(savedInstanceState: Bundle?) {
-
         with(rv) {
             val linearLayoutManager = LinearLayoutManager(this@MainActivity)
             layoutManager = linearLayoutManager
@@ -65,6 +70,21 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
                 finishLoadMore(300)
                 LogUtils.e("setOnLoadMoreListener")
             })
+        }
+
+        //添加头布局
+        layoutInflater.inflate(R.layout.head_main, null, false).apply {
+            val data: MutableList<String> = ArrayList()
+            data.add(" 1. 登录注册界面\n 2. 主UI框架\n 3. 轮播图,阅读列表")
+            data.add(" 1. 登录注册界面\n 2. 主UI框架\n 3. 轮播图,阅读列表")
+            val banner = findViewById<View>(R.id.banner_head) as Banner<*, *>
+            with(banner) {
+                adapter = MainHeadAdapter(mDatas = data)
+                addBannerLifecycleObserver(this@MainActivity)
+                setOrientation(Banner.VERTICAL)
+                setPageTransformer(ScaleInTransformer())
+            }
+            mainAdapter.addHeaderView(this)
         }
     }
 

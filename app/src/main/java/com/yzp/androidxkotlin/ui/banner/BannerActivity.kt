@@ -1,6 +1,5 @@
 package com.yzp.androidxkotlin.ui.banner
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
 import com.yzp.androidxkotlin.R
