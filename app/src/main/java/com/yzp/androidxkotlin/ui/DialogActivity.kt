@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.dialog
+package com.yzp.androidxkotlin.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

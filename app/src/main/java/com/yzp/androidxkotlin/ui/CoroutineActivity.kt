@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.userinfo
+package com.yzp.androidxkotlin.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +7,9 @@ import com.yzp.androidxkotlin.R
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 
-class UserInfoActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
+class CoroutineActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
-    override fun layoutId(): Int = R.layout.activity_user_info
+    override fun layoutId(): Int = R.layout.activity_coroutine
 
     override fun initView(savedInstanceState: Bundle?) {
     }

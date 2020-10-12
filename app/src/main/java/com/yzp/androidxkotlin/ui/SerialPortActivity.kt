@@ -1,15 +1,14 @@
-package com.yzp.androidxkotlin.ui.room
+package com.yzp.androidxkotlin.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
 import com.yzp.androidxkotlin.R
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 
-class RoomActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
+class SerialPortActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
-    override fun layoutId(): Int = R.layout.activity_room
+    override fun layoutId(): Int = R.layout.activity_serialport
 
     override fun initView(savedInstanceState: Bundle?) {
     }

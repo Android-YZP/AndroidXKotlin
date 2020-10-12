@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.picpick
+package com.yzp.androidxkotlin.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +7,9 @@ import com.yzp.androidxkotlin.R
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 
-class PicPickActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
+class WebViewActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
-    override fun layoutId(): Int = R.layout.activity_pic_pick
+    override fun layoutId(): Int = R.layout.activity_web_view
 
     override fun initView(savedInstanceState: Bundle?) {
     }

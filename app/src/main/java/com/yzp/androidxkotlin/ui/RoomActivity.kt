@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.coroutines
+package com.yzp.androidxkotlin.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,13 +7,14 @@ import com.yzp.androidxkotlin.R
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 
-class CoroutineActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
+class RoomActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
-    override fun layoutId(): Int = R.layout.activity_coroutine
+    override fun layoutId(): Int = R.layout.activity_room
 
     override fun initView(savedInstanceState: Bundle?) {
     }
 
     override fun initData() {
     }
+
 }

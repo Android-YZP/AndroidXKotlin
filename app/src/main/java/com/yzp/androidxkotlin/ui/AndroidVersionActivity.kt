@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.permission
+package com.yzp.androidxkotlin.ui
 
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
@@ -6,14 +6,13 @@ import com.yzp.androidxkotlin.R
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 
-class PermissionActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
+class AndroidVersionActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
-    override fun layoutId(): Int = R.layout.activity_permission
+    override fun layoutId(): Int = R.layout.activity_android_version
 
     override fun initView(savedInstanceState: Bundle?) {
     }
 
     override fun initData() {
     }
-
 }

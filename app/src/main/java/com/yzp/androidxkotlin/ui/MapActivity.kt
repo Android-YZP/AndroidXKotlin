@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.usb
+package com.yzp.androidxkotlin.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,9 +7,9 @@ import com.yzp.androidxkotlin.R
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 
-class UsbActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
+class MapActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
-    override fun layoutId(): Int = R.layout.activity_usb
+    override fun layoutId(): Int = R.layout.activity_map
 
     override fun initView(savedInstanceState: Bundle?) {
     }

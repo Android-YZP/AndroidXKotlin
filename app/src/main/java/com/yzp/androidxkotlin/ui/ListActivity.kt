@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.list
+package com.yzp.androidxkotlin.ui
 
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding

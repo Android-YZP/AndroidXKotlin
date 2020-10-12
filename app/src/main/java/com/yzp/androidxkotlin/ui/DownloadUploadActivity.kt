@@ -1,18 +1,20 @@
-package com.yzp.androidxkotlin.ui.androidversion
+package com.yzp.androidxkotlin.ui
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.ViewDataBinding
 import com.yzp.androidxkotlin.R
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 
-class AndroidVersionActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
+class DownloadUploadActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
-    override fun layoutId(): Int = R.layout.activity_android_version
+    override fun layoutId(): Int = R.layout.activity_download_upload
 
     override fun initView(savedInstanceState: Bundle?) {
     }
 
     override fun initData() {
     }
+
 }
