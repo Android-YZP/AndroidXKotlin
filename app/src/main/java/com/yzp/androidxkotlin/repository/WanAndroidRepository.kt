@@ -1,11 +1,10 @@
 package com.yzp.androidxkotlin.repository
 
-import com.yzp.androidxkotlin.api.ApiService
 import com.yzp.androidxkotlin.api.WanApiService
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.http.RetrofitClient
-import com.yzp.androidxkotlin.wanandroidui.LoginBean
+import com.yzp.androidxkotlin.wanandroidui.login.LoginBean
 import com.yzp.mvvmlibrary.base.BaseModel
 import java.util.*
 

@@ -23,7 +23,7 @@ import com.yzp.androidxkotlin.ui.lifecycle.LifecycleActivity
 import com.yzp.androidxkotlin.ui.livedataviewmodel.LiveDataViewModelActivity
 import com.yzp.androidxkotlin.ui.navigation.NavActivity
 import com.yzp.androidxkotlin.ui.workmanager.WorkManagerActivity
-import com.yzp.androidxkotlin.wanandroidui.LoginActivity
+import com.yzp.androidxkotlin.wanandroidui.login.LoginActivity
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 import kotlinx.android.synthetic.main.activity_main.*

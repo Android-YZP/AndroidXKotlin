@@ -2,7 +2,7 @@ package com.yzp.androidxkotlin.api
 
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.ui.banner.BannerBean
-import com.yzp.androidxkotlin.wanandroidui.LoginBean
+import com.yzp.androidxkotlin.wanandroidui.login.LoginBean
 import retrofit2.http.*
 import java.util.*
 

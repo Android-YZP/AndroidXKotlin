@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Design.NoActionBar">
-        <activity android:name=".wanandroidui.LoginActivity"></activity>
+        <activity android:name=".wanandroidui.register.RegisterActivity"></activity>
+        <activity android:name=".wanandroidui.login.LoginActivity" />
         <activity android:name=".ui.ErrorActivity" />
         <activity android:name=".ui.DialogActivity" />
         <activity

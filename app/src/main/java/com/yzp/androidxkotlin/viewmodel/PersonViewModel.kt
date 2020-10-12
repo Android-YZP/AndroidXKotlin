@@ -1,22 +1,13 @@
-package com.yzp.androidxkotlin.wanandroidui
+package com.yzp.androidxkotlin.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import com.blankj.utilcode.util.GsonUtils
-import com.blankj.utilcode.util.LogUtils
-import com.google.gson.Gson
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.base.BaseResult
-import com.yzp.androidxkotlin.repository.HomeRepository
 import com.yzp.androidxkotlin.repository.WanAndroidRepository
+import com.yzp.androidxkotlin.wanandroidui.login.LoginBean
 import com.yzp.mvvmlibrary.base.BaseViewModel
-import com.yzp.mvvmlibrary.http.ExceptionHandle
-import com.yzp.mvvmlibrary.http.ResponseThrowable
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.flow.*
-import java.util.*
 
-class LoginViewModel : BaseViewModel() {
+class PersonViewModel : BaseViewModel() {
 
     private val wanAndroidRepository by lazy {
         WanAndroidRepository.getInstance()
@@ -34,9 +25,6 @@ class LoginViewModel : BaseViewModel() {
         })
         return mBanners
     }
-
-
-
 
     fun login(username: String, password: String): MutableLiveData<LoginBean> {
         launchOnlyResult({
