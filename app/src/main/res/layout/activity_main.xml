@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <com.scwang.smart.refresh.header.ClassicsHeader
+        <com.scwang.smart.refresh.header.BezierRadarHeader
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <com.scwang.smart.refresh.footer.ClassicsFooter
+        <com.scwang.smart.refresh.footer.BallPulseFooter
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
