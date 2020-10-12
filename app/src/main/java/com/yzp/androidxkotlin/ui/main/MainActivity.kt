@@ -18,7 +18,7 @@ import com.yzp.androidxkotlin.ui.CoroutineActivity
 import com.yzp.androidxkotlin.ui.DialogActivity
 import com.yzp.androidxkotlin.ui.UpdateActivity
 import com.yzp.androidxkotlin.ui.databinding.DataBindingActivity
-import com.yzp.androidxkotlin.ui.home.HomeActivity
+import com.yzp.androidxkotlin.ui.net.NetActivity
 import com.yzp.androidxkotlin.ui.lifecycle.LifecycleActivity
 import com.yzp.androidxkotlin.ui.livedataviewmodel.LiveDataViewModelActivity
 import com.yzp.androidxkotlin.ui.navigation.NavActivity
@@ -55,7 +55,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
             })
 
             mainAdapter.setOnItemLongClickListener(OnItemLongClickListener { adapter, view, position ->
-                startActivity(Intent(this@MainActivity, HomeActivity::class.java))
+                startActivity(Intent(this@MainActivity, NetActivity::class.java))
                 true
             })
             adapter = mainAdapter
@@ -98,7 +98,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         data.add(MainBean("Room的使用", CoroutineActivity::class.java))
         data.add(MainBean("个人主页框架", CoroutineActivity::class.java))
         data.add(MainBean("列表", CoroutineActivity::class.java))
-        data.add(MainBean("网络请求", HomeActivity::class.java))
+        data.add(MainBean("网络请求", NetActivity::class.java))
         data.add(MainBean("对话框", DialogActivity::class.java))
         data.add(MainBean("版本更新", UpdateActivity::class.java))
         data.add(MainBean("Android版本适配", CoroutineActivity::class.java))

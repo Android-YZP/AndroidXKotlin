@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.home
+package com.yzp.androidxkotlin.ui.net
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
@@ -12,7 +12,7 @@ import com.yzp.mvvmlibrary.http.ResponseThrowable
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 
-class HomeViewModel : BaseViewModel() {
+class NetViewModel : BaseViewModel() {
 
     private val homeRepository by lazy {
         HomeRepository.getInstance()

@@ -1,22 +1,21 @@
-package com.yzp.androidxkotlin.ui.home
+package com.yzp.androidxkotlin.ui.net
 
 import android.graphics.Color
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
+import com.blankj.utilcode.util.LogUtils
 import com.google.gson.Gson
 import com.yzp.androidxkotlin.R
-import com.yzp.androidxkotlin.base.GlobalConfig.BASE_URL_JT
 import com.yzp.androidxkotlin.base.GlobalConfig.BASE_URL_WMS
 import com.yzp.mvvmlibrary.base.BaseActivity
-import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_net.*
 import me.jessyan.retrofiturlmanager.RetrofitUrlManager
 
-class HomeActivity : BaseActivity<HomeViewModel, ViewDataBinding>() {
+class NetActivity : BaseActivity<NetViewModel, ViewDataBinding>() {
 
-    override fun layoutId(): Int = R.layout.activity_home
+    override fun layoutId(): Int = R.layout.activity_net
 
     override fun initView(savedInstanceState: Bundle?) {
         with(tv) {
@@ -33,12 +32,12 @@ class HomeActivity : BaseActivity<HomeViewModel, ViewDataBinding>() {
         RetrofitUrlManager.getInstance().putDomain("douban", BASE_URL_WMS);
         viewModel.getBanner()
             .observe(this, Observer {
-                Log.e("====", Gson().toJson(it))
+                LogUtils.e(Gson().toJson(it))
                 tv.text = Gson().toJson(it)
             })
 
         viewModel.login().observe(this, Observer {
-            Log.e("====", Gson().toJson(it))
+            LogUtils.e(Gson().toJson(it))
             tv.text = Gson().toJson(it)
         })
     }

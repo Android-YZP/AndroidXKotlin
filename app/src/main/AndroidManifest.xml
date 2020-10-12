@@ -43,7 +43,7 @@
         <activity android:name=".ui.MapActivity" />
         <activity android:name=".ui.UserInfoActivity" />
         <activity android:name=".ui.CoroutineActivity" />
-        <activity android:name=".ui.home.HomeActivity" />
+        <activity android:name=".ui.net.NetActivity" />
         <activity android:name=".kotlin.CoroutinesActivity" />
         <activity android:name=".kotlin.ListActivity" />
         <activity android:name=".ui.main.MainActivity">
