@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import com.yzp.androidxkotlin.bean.BannerBean
 import com.yzp.androidxkotlin.base.BaseResult
+import com.yzp.androidxkotlin.repository.HomeRepository
 import com.yzp.mvvmlibrary.base.BaseViewModel
 import com.yzp.mvvmlibrary.http.ExceptionHandle
 import com.yzp.mvvmlibrary.http.ResponseThrowable

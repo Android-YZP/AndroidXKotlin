@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.home
+package com.yzp.androidxkotlin.repository
 
 import com.yzp.androidxkotlin.api.ApiService
 import com.yzp.androidxkotlin.base.BaseResult
