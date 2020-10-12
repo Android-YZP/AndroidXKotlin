@@ -5,12 +5,12 @@ import android.os.Bundle
 import android.util.Log
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blankj.utilcode.util.LogUtils
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.listener.OnItemLongClickListener
 import com.scwang.smart.refresh.layout.listener.OnLoadMoreListener
 import com.scwang.smart.refresh.layout.listener.OnRefreshListener
 import com.yzp.androidxkotlin.R
-import com.yzp.androidxkotlin.bean.MainBean
 import com.yzp.androidxkotlin.ui.CoroutineActivity
 import com.yzp.androidxkotlin.ui.databinding.DataBindingActivity
 import com.yzp.androidxkotlin.ui.DialogActivity
@@ -20,6 +20,7 @@ import com.yzp.androidxkotlin.ui.livedataviewmodel.LiveDataViewModelActivity
 import com.yzp.androidxkotlin.ui.navigation.NavActivity
 import com.yzp.androidxkotlin.ui.UpdateActivity
 import com.yzp.androidxkotlin.ui.workmanager.WorkManagerActivity
+import com.yzp.androidxkotlin.wanandroidui.LoginActivity
 import com.yzp.mvvmlibrary.base.BaseActivity
 import com.yzp.mvvmlibrary.base.NoViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -58,11 +59,11 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         with(refreshLayout) {
             setOnRefreshListener(OnRefreshListener {
                 finishRefresh(300)
-                log("setOnRefreshListener")
+                LogUtils.e("setOnRefreshListener")
             })
             setOnLoadMoreListener(OnLoadMoreListener {
                 finishLoadMore(300)
-                log("setOnLoadMoreListener")
+                LogUtils.e("setOnLoadMoreListener")
             })
         }
     }
@@ -91,13 +92,9 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         data.add(MainBean("蓝牙", CoroutineActivity::class.java))
         data.add(MainBean("Wifi", CoroutineActivity::class.java))
         data.add(MainBean("串口通信", CoroutineActivity::class.java))
+        data.add(MainBean("Wan Android", LoginActivity::class.java))
         mainAdapter.notifyDataSetChanged()
     }
-
-    fun log(s: String) {
-        Log.e("===========>", s)
-    }
-
 
 }
 

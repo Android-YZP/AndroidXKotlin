@@ -3,7 +3,7 @@ package com.yzp.androidxkotlin.ui.home
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
-import com.yzp.androidxkotlin.bean.BannerBean
+import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.repository.HomeRepository
 import com.yzp.mvvmlibrary.base.BaseViewModel
@@ -13,7 +13,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 
 class HomeViewModel : BaseViewModel() {
-
 
     private val homeRepository by lazy {
         HomeRepository.getInstance()

@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.ErrorActivity"></activity>
+        <activity android:name=".wanandroidui.LoginActivity"></activity>
+        <activity android:name=".ui.ErrorActivity" />
         <activity android:name=".ui.DialogActivity" />
         <activity
             android:name=".ui.navigation.NavActivity"
@@ -37,7 +38,7 @@
         <activity android:name=".ui.ListActivity" />
         <activity android:name=".ui.DownloadUploadActivity" />
         <activity android:name=".ui.BlueToothActivity" />
-        <activity android:name=".ui.BannerActivity" />
+        <activity android:name=".ui.banner.BannerActivity" />
         <activity android:name=".ui.AndroidVersionActivity" />
         <activity android:name=".ui.MapActivity" />
         <activity android:name=".ui.UserInfoActivity" />

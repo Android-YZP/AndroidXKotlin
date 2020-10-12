@@ -1,7 +1,7 @@
 package com.yzp.androidxkotlin.api
 
 import com.yzp.androidxkotlin.base.BaseResult
-import com.yzp.androidxkotlin.bean.BannerBean
+import com.yzp.androidxkotlin.ui.banner.BannerBean
 import retrofit2.http.*
 import java.util.*
 

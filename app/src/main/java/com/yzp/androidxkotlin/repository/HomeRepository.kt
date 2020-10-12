@@ -2,7 +2,7 @@ package com.yzp.androidxkotlin.repository
 
 import com.yzp.androidxkotlin.api.ApiService
 import com.yzp.androidxkotlin.base.BaseResult
-import com.yzp.androidxkotlin.bean.BannerBean
+import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.http.*
 import com.yzp.mvvmlibrary.base.BaseModel
 

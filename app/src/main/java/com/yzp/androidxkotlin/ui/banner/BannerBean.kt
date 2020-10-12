@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.bean
+package com.yzp.androidxkotlin.ui.banner
 
 /**
  */
