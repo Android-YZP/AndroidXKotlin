@@ -1,16 +1,18 @@
 package com.yzp.androidxkotlin.repository
 
 import com.yzp.androidxkotlin.api.ApiService
+import com.yzp.androidxkotlin.api.WanApiService
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.http.RetrofitClient
+import com.yzp.androidxkotlin.wanandroidui.LoginBean
 import com.yzp.mvvmlibrary.base.BaseModel
 import java.util.*
 
 class WanAndroidRepository private constructor(
 ) : BaseModel() {
 
-    private val mService by lazy { RetrofitClient.getInstance().create(ApiService::class.java) }
+    private val mService by lazy { RetrofitClient.getInstance().create(WanApiService::class.java) }
 
 
     suspend fun getBannerData(): BaseResult<List<BannerBean>> {
@@ -147,6 +149,19 @@ class WanAndroidRepository private constructor(
 
     suspend fun doneTodo(id: Int, status: Int): BaseResult<Objects> {
         return mService.doneTodo(id, status)
+    }
+
+    suspend fun login(username: String, password: String): BaseResult<LoginBean> {
+        return mService.login(username, password)
+    }
+
+    companion object {
+        @Volatile
+        private var INSTANCE: WanAndroidRepository? = null
+        fun getInstance() =
+            INSTANCE ?: synchronized(this) {
+                INSTANCE ?: WanAndroidRepository().also { INSTANCE = it }
+            }
     }
 
 

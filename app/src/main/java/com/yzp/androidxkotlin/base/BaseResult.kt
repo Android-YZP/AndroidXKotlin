@@ -18,7 +18,7 @@ data class BaseResult<T>(
 
     override fun data() = data
 
-    override fun isSuccess() = errorCode == 200
+    override fun isSuccess() = errorCode == 0
 
 
 }

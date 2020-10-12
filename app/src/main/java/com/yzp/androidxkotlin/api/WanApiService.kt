@@ -2,6 +2,7 @@ package com.yzp.androidxkotlin.api
 
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.ui.banner.BannerBean
+import com.yzp.androidxkotlin.wanandroidui.LoginBean
 import retrofit2.http.*
 import java.util.*
 
@@ -18,7 +19,7 @@ interface WanApiService {
     suspend fun login(
         @Field("username") username: String,
         @Field("password") pwd: String
-    ): BaseResult<Objects>
+    ): BaseResult<LoginBean>
 
 
 

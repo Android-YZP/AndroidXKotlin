@@ -69,7 +69,7 @@ open class BaseViewModel : AndroidViewModel(Utils.getApp()), LifecycleObserver {
      * @param complete  完成回调（无论成功失败都会调用）
      * @param isShowDialog 是否显示加载框
      */
-    fun <T> launchOnlyresult(
+    fun <T> launchOnlyResult(
         block: suspend CoroutineScope.() -> IBaseResponse<T>,
         success: (T) -> Unit,
         error: (ResponseThrowable) -> Unit = {
@@ -111,12 +111,10 @@ open class BaseViewModel : AndroidViewModel(Utils.getApp()), LifecycleObserver {
             try {
                 block()
             } catch (e: Throwable) {
-
-                if (e.message!!.contains("400")) {
-                    val string = (e as HttpException).response()!!.errorBody()!!.string()
-                    defUI.toastEvent.postValue(string)
-                }
-
+//                if (e.message!!.contains("400")) {
+//                    val string = (e as HttpException).response()!!.errorBody()!!.string()
+//                    defUI.toastEvent.postValue(string)
+//                }
                 error(ExceptionHandle.handleException(e))
             } finally {
                 complete()
