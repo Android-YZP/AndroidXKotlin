@@ -17,6 +17,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 class LoginActivity : BaseActivity<PersonViewModel, ViewDataBinding>() {
 
     val kv = MMKV.defaultMMKV();
+
     override fun layoutId(): Int = R.layout.activity_login
 
     override fun initView(savedInstanceState: Bundle?) {

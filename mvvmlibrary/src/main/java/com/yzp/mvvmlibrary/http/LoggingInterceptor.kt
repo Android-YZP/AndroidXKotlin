@@ -169,7 +169,6 @@ class LoggingInterceptor(
         if (contentType != null) {
             charset = contentType.charset(charset)
         }
-        LogUtils.d(clone.readString(charset))
         return clone.readString(charset)
     }
 
