@@ -43,9 +43,9 @@ interface WanApiService {
     @FormUrlEncoded
     @POST("user/register")
     suspend fun register(
-        @Field("username") username: String, @Field("password") pwd: String, @Field(
-            "repassword"
-        ) rpwd: String
+        @Field("username") username: String,
+        @Field("password") pwd: String,
+        @Field("repassword") rpwd: String
     ): BaseResult<Objects>
 
     /**
