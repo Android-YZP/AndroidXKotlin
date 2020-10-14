@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.wanandroidui.login
+package com.yzp.androidxkotlin.wanandroidui.personal
 
 import android.content.Intent
 import android.os.Bundle

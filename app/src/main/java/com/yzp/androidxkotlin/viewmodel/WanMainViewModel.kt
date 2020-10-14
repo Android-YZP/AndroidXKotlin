@@ -7,7 +7,7 @@ import com.yzp.androidxkotlin.repository.WanAndroidRepository
 import com.yzp.androidxkotlin.bean.LoginBean
 import com.yzp.mvvmlibrary.base.BaseViewModel
 
-class PersonViewModel : BaseViewModel() {
+class WanMainViewModel : BaseViewModel() {
 
     private val wanAndroidRepository by lazy {
         WanAndroidRepository.getInstance()

@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.wanandroidui.login
+package com.yzp.androidxkotlin.bean
 
 data class LoginBean(
     val admin: Boolean,

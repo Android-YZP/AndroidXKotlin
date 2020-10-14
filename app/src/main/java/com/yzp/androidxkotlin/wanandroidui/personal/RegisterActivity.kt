@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.wanandroidui.register
+package com.yzp.androidxkotlin.wanandroidui.personal
 
 import android.os.Bundle
 import android.text.TextUtils

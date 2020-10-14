@@ -4,9 +4,8 @@ import com.yzp.androidxkotlin.api.WanApiService
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.http.RetrofitClient
-import com.yzp.androidxkotlin.wanandroidui.login.LoginBean
+import com.yzp.androidxkotlin.bean.LoginBean
 import com.yzp.mvvmlibrary.base.BaseModel
-import java.util.*
 
 class WanAndroidRepository private constructor(
 ) : BaseModel() {

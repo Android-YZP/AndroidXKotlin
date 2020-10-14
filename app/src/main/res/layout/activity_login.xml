@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eeeeee"
-    tools:context=".wanandroidui.login.LoginActivity">
+    tools:context=".wanandroidui.personal.LoginActivity">
 
     <ImageView
         android:layout_width="match_parent"

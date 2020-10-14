@@ -2,9 +2,8 @@ package com.yzp.androidxkotlin.api
 
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.ui.banner.BannerBean
-import com.yzp.androidxkotlin.wanandroidui.login.LoginBean
+import com.yzp.androidxkotlin.bean.LoginBean
 import retrofit2.http.*
-import java.util.*
 
 /**
  * 描述　: WanAndroid API
