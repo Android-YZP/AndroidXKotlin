@@ -12,4 +12,15 @@
         app:isBack="false"
         app:title="广场" />
 
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/mi_home"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_home"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
 </LinearLayout>
