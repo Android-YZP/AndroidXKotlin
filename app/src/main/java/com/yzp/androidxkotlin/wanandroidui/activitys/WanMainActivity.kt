@@ -30,7 +30,6 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
-    private val CHANNELS = arrayOf("首页", "问答", "体系", "我的")
     private val CHANNELSICON = arrayOf(R.mipmap.ic_bottom_bar_home,
         R.mipmap.ic_bottom_bar_wechat,
         R.mipmap.ic_bottom_bar_navi,
@@ -44,7 +43,7 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         with(vp_main) {
             mData.add(WanHomeFragment())//首页
             mData.add(QuestionFragment())//问答
-            mData.add(SquareFragment())//体系
+            mData.add(SquareFragment())//广场
             mData.add(MeFragment())//我的
             adapter = MainPagerAdapter(supportFragmentManager, mData)
         }
@@ -62,7 +61,7 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
             val commonNavigator = CommonNavigator(this@WanMainActivity)
             commonNavigator.isAdjustMode = true
             commonNavigator.adapter = object : CommonNavigatorAdapter() {
-                override fun getCount(): Int = CHANNELS.size
+                override fun getCount(): Int = CHANNELSICON.size
 
                 override fun getTitleView(context: Context?, index: Int): IPagerTitleView {
                     var commonPagerTitleView = CommonPagerTitleView(context)
@@ -73,8 +72,6 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
                         null
                     )
                     val titleImg = customLayout.findViewById<View>(R.id.title_img) as ImageView
-                    val titleText = customLayout.findViewById<View>(R.id.title_text) as TextView
-                    titleText.text = CHANNELS[index]
                     titleImg.setImageResource(CHANNELSICON[index])
                     commonPagerTitleView.setContentView(customLayout)
 
@@ -82,11 +79,9 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
                         object : OnPagerTitleChangeListener {
                             override fun onSelected(index: Int, totalCount: Int) {
                                 titleImg.setColorFilter(Color.BLUE);
-                                titleText.setTextColor(Color.BLUE)
                             }
 
                             override fun onDeselected(index: Int, totalCount: Int) {
-                                titleText.setTextColor(Color.LTGRAY)
                                 titleImg.setColorFilter(Color.LTGRAY);
                             }
 
@@ -96,10 +91,8 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
                                 leavePercent: Float,
                                 leftToRight: Boolean
                             ) {
-                                titleImg.scaleX = 1.1f + (1.0f - 1.1f) * leavePercent
-                                titleImg.scaleY = 1.1f + (1.0f - 1.1f) * leavePercent
-                                titleText.scaleX = 1.1f + (1.0f - 1.1f) * leavePercent
-                                titleText.scaleY = 1.1f + (1.0f - 1.1f) * leavePercent
+                                titleImg.scaleX = 1.2f + (0.8f - 1.2f) * leavePercent
+                                titleImg.scaleY = 1.2f + (0.8f - 1.2f) * leavePercent
                             }
 
                             override fun onEnter(
@@ -108,10 +101,8 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
                                 enterPercent: Float,
                                 leftToRight: Boolean
                             ) {
-                                titleImg.scaleX = 1.0f + (1.1f - 1.0f) * enterPercent
-                                titleImg.scaleY = 1.0f + (1.1f - 1.0f) * enterPercent
-                                titleText.scaleX = 1.0f + (1.1f - 1.0f) * enterPercent
-                                titleText.scaleY = 1.0f + (1.1f - 1.0f) * enterPercent
+                                titleImg.scaleX = 0.8f + (1.2f - 0.8f) * enterPercent
+                                titleImg.scaleY = 0.8f + (1.2f - 0.8f) * enterPercent
                             }
                         }
 
