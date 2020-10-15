@@ -24,7 +24,7 @@ class UpdateActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
     private fun update() {
         // 更新的数据参数
         val appUpdate = AppUpdate.Builder() //更新地址（必传）
-            .newVersionUrl("http://40.73.25.84:8848/jwms-system/pda-version/download?Blade-Auth=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnRfaWQiOiI0NzUzMzUiLCJ1c2VyX25hbWUiOiJ5enAiLCJyZWFsX25hbWUiOiLlp5rkuK3lubMiLCJhdmF0YXIiOiIiLCJhdXRob3JpdGllcyI6WyJhZG1pbiJdLCJjbGllbnRfaWQiOiJzYWJlciIsInJvbGVfbmFtZSI6ImFkbWluIiwibGljZW5zZSI6InBvd2VyZWQgYnkgYmxhZGV4IiwicG9zdF9pZCI6IjEyOTYzMjU5MzA1MzIyNTc3OTMiLCJ1c2VyX2lkIjoiMTMwNjQwNDI1MDY0Nzk2MTYwMiIsInJvbGVfaWQiOiIxMjgyNDg4MDAyNzk0MjgzMDA5Iiwic2NvcGUiOlsiYWxsIl0sIm5pY2tfbmFtZSI6IuWkp-WkqSIsIm9hdXRoX2lkIjoiIiwiZXhwIjoxNjAwODI4MDE3LCJkZXB0X2lkIjoiMTI4MjQ4ODAxMTcxNTU2NzYxOCwxMjk2MzIyNDY4OTYwNTgzNjgxLDEzMDYwNDI0MjgxMDc0MjM3NDYiLCJqdGkiOiJlOWE4MWZjNy0xMDFjLTQ0ZDktYWFkMC02Y2Y5MjZiZGEzNGIiLCJhY2NvdW50IjoieXpwIn0.T4kwCKvQFXC5rQ2NJiqmXgQXyEHZw1hft4LTKYw5MgU&versionIndex=5") //                .newVersionUrl("https://xuexiangjys.oss-cn-shanghai.aliyuncs.com/apk/xupdate_demo_1.0.2.apk")
+            .newVersionUrl("https://gitee.com/androidYZP/RxHttp/raw/master/app.apk")
             // 版本号（非必填）
             .newVersionCode("v1.7") // 通过传入资源id来自定义更新对话框，注意取消更新的id要定义为btnUpdateLater，立即更新的id要定义为btnUpdateNow（非必填）
             .updateResourceId(R.layout.dialog_update) // 更新的标题，弹框的标题（非必填，默认为应用更新）

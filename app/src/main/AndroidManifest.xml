@@ -12,7 +12,8 @@
         android:networkSecurityConfig="@xml/net_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Design.NoActionBar">
+        android:theme="@style/AppTheme">
+
         <activity android:name=".wanandroidui.activitys.WanMainActivity"></activity>
         <activity android:name=".wanandroidui.personal.RegisterActivity" />
         <activity android:name=".wanandroidui.personal.LoginActivity" />

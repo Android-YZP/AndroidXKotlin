@@ -2,10 +2,16 @@ package com.yzp.androidxkotlin.ui.main
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
+import androidx.appcompat.app.ActionBar
 import androidx.databinding.ViewDataBinding
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.blankj.utilcode.util.BarUtils
 import com.blankj.utilcode.util.LogUtils
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.chad.library.adapter.base.listener.OnItemLongClickListener
@@ -18,10 +24,10 @@ import com.yzp.androidxkotlin.ui.CoroutineActivity
 import com.yzp.androidxkotlin.ui.DialogActivity
 import com.yzp.androidxkotlin.ui.UpdateActivity
 import com.yzp.androidxkotlin.ui.databinding.DataBindingActivity
-import com.yzp.androidxkotlin.ui.net.NetActivity
 import com.yzp.androidxkotlin.ui.lifecycle.LifecycleActivity
 import com.yzp.androidxkotlin.ui.livedataviewmodel.LiveDataViewModelActivity
 import com.yzp.androidxkotlin.ui.navigation.NavActivity
+import com.yzp.androidxkotlin.ui.net.NetActivity
 import com.yzp.androidxkotlin.ui.workmanager.WorkManagerActivity
 import com.yzp.androidxkotlin.wanandroidui.personal.LoginActivity
 import com.yzp.mvvmlibrary.base.BaseActivity
@@ -39,10 +45,11 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
 
     private val mainAdapter = MainAdapter(data)
 
-    override fun layoutId(): Int = R.layout.activity_main;
+    override fun layoutId(): Int = R.layout.activity_main
 
     @SuppressLint("SetTextI18n")
     override fun initView(savedInstanceState: Bundle?) {
+
         with(rv) {
             val linearLayoutManager = LinearLayoutManager(this@MainActivity)
             layoutManager = linearLayoutManager
@@ -115,6 +122,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         data.add(MainBean("Wan Android", LoginActivity::class.java))
         mainAdapter.notifyDataSetChanged()
     }
+
 
 }
 

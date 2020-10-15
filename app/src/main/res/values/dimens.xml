@@ -172,5 +172,7 @@
     <dimen name="dp_20">20dp</dimen>
     <dimen name="dp_52">52dp</dimen>
     <dimen name="dimen_230">230dp</dimen>
+    <dimen name="dimen_75">75dp</dimen>
+    <dimen name="dimen_70">70dp</dimen>
 
 </resources>
