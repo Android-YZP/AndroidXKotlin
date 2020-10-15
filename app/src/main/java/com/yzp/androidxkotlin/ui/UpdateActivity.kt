@@ -24,7 +24,7 @@ class UpdateActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
     private fun update() {
         // 更新的数据参数
         val appUpdate = AppUpdate.Builder() //更新地址（必传）
-            .newVersionUrl("https://gitee.com/androidYZP/RxHttp/raw/master/app.apk")
+            .newVersionUrl("http://47.114.120.136:9102/apk/2c0dad7983c64358921a7c276a8fad98.apk")
             // 版本号（非必填）
             .newVersionCode("v1.7") // 通过传入资源id来自定义更新对话框，注意取消更新的id要定义为btnUpdateLater，立即更新的id要定义为btnUpdateNow（非必填）
             .updateResourceId(R.layout.dialog_update) // 更新的标题，弹框的标题（非必填，默认为应用更新）
