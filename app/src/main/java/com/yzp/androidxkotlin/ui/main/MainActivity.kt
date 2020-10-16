@@ -96,6 +96,7 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
     }
 
     override fun initData() {
+        data.add(MainBean("Wan Android", LoginActivity::class.java))
         data.add(MainBean("协程", CoroutineActivity::class.java))
         data.add(MainBean("Lifecycle的使用", LifecycleActivity::class.java))
         data.add(MainBean("LiveDataViewModel的使用", LiveDataViewModelActivity::class.java))
@@ -119,7 +120,6 @@ class MainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         data.add(MainBean("蓝牙", CoroutineActivity::class.java))
         data.add(MainBean("Wifi", CoroutineActivity::class.java))
         data.add(MainBean("串口通信", CoroutineActivity::class.java))
-        data.add(MainBean("Wan Android", LoginActivity::class.java))
         mainAdapter.notifyDataSetChanged()
     }
 

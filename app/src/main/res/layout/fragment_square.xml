@@ -6,19 +6,19 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.yzp.androidxkotlin.view.TopBar
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:isBack="false"
-        app:title="广场" />
+        android:background="@color/colorPrimary"
+        android:layout_height="@dimen/dimen_20" />
 
     <net.lucode.hackware.magicindicator.MagicIndicator
-        android:id="@+id/mi_home"
+        android:id="@+id/mi_square"
         android:layout_width="match_parent"
+        android:background="@color/colorPrimary"
         android:layout_height="@dimen/dimen_50" />
 
     <androidx.viewpager.widget.ViewPager
-        android:id="@+id/vp_home"
+        android:id="@+id/vp_square"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />

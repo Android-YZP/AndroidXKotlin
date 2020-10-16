@@ -8,6 +8,7 @@ import com.yzp.mvvmlibrary.base.NoViewModel
 
 class WanHomeFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
 
+
     override fun layoutId(): Int = R.layout.fragment_wan_home
 
     override fun lazyLoadData() {

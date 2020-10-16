@@ -14,6 +14,7 @@ import com.yzp.mvvmlibrary.base.NoViewModel
 class MeFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
 
 
+
     override fun layoutId(): Int = R.layout.fragment_me
 
     override fun lazyLoadData() {

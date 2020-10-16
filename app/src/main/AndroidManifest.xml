@@ -32,11 +32,7 @@
         <activity android:name=".ui.VideoActivity" />
         <activity android:name=".ui.UsbActivity" />
         <activity android:name=".ui.UpdateActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name=".ui.SerialPortActivity" />
@@ -58,7 +54,11 @@
         <activity android:name=".kotlin.ListActivity" />
 
         <activity android:name=".ui.main.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

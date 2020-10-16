@@ -13,6 +13,7 @@ import com.yzp.mvvmlibrary.base.NoViewModel
 
 class QuestionFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
 
+
     override fun layoutId(): Int = R.layout.fragment_question
 
     override fun lazyLoadData() {

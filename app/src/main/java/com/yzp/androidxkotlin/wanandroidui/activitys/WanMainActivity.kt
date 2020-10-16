@@ -30,10 +30,12 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
-    private val CHANNELSICON = arrayOf(R.mipmap.ic_bottom_bar_home,
+    private val CHANNELSICON = arrayOf(
+        R.mipmap.ic_bottom_bar_home,
         R.mipmap.ic_bottom_bar_wechat,
         R.mipmap.ic_bottom_bar_navi,
-        R.mipmap.ic_bottom_bar_mine)
+        R.mipmap.ic_bottom_bar_mine
+    )
 
     private var mData: MutableList<Fragment> = ArrayList()
 
@@ -46,6 +48,7 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
             mData.add(SquareFragment())//广场
             mData.add(MeFragment())//我的
             adapter = MainPagerAdapter(supportFragmentManager, mData)
+            offscreenPageLimit = 3
         }
         initMagicIndicator()
     }

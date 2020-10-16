@@ -6,10 +6,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.yzp.androidxkotlin.view.TopBar
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:isBack="false"
-        app:title="知识库" />
+
 
 </LinearLayout>
