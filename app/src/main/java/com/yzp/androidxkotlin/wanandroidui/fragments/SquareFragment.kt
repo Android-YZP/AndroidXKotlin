@@ -22,9 +22,9 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTit
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.CommonPagerTitleView
 
 class SquareFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
-    private val CHANNELSICON = arrayOf(R.mipmap.ic_bottom_bar_home,
-        R.mipmap.ic_bottom_bar_navi,
-        R.mipmap.ic_bottom_bar_mine)
+    private val CHANNELSICON = arrayOf(R.mipmap.ic_qq_group,
+        R.mipmap.ic_jianshu,
+        R.mipmap.ic_read_later)
     private var mData: MutableList<Fragment> = ArrayList()
 
     override fun layoutId(): Int = R.layout.fragment_square
