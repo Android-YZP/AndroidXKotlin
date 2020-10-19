@@ -7,13 +7,11 @@
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/logo"
         android:label="@string/app_name"
         android:networkSecurityConfig="@xml/net_config"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".wanandroidui.activitys.WanMainActivity"></activity>
         <activity android:name=".wanandroidui.personal.RegisterActivity" />
         <activity android:name=".wanandroidui.personal.LoginActivity" />
@@ -53,7 +51,9 @@
         <activity android:name=".kotlin.CoroutinesActivity" />
         <activity android:name=".kotlin.ListActivity" />
 
-        <activity android:name=".ui.main.MainActivity">
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:theme="@style/entrance_LauncherTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

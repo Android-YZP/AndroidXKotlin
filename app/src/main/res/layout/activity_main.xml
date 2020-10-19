@@ -4,22 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/them_colors"
+    android:background="@color/black"
     android:orientation="vertical">
 
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@mipmap/ic_qq_group" />
+        android:src="@mipmap/logo" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:gravity="center"
-        android:paddingBottom="@dimen/dimen_15"
+        android:paddingTop="@dimen/dimen_15"
         android:text="Wan Android"
-        android:textColor="@color/white"
+        android:textColor="@color/them_colors"
         android:textSize="50sp" />
 
 </RelativeLayout>
