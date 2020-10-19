@@ -6,17 +6,5 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/ic_launcher_background"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior" >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="法第三方士大夫士大夫分色费涩味分为分文未发文"
-            android:textSize="155sp" />
-
-    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
