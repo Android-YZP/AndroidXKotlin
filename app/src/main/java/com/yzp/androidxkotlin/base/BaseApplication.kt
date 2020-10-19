@@ -25,8 +25,6 @@ class BaseApplication : App() {
 //            .errorActivity(ErrorActivity::class.java) //发生错误跳转的activity
             .eventListener(null) //允许你指定事件侦听器，以便在库显示错误活动 default: null
             .apply()
-
-        val rootDir = MMKV.initialize(this)
-        LogUtils.e("mmkv root: $rootDir")
+         MMKV.initialize(this)
     }
 }

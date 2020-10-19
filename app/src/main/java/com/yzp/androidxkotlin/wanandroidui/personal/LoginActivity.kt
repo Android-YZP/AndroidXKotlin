@@ -55,7 +55,6 @@ class LoginActivity : BaseActivity<PersonViewModel, ViewDataBinding>() {
             kv.encode("User", GsonUtils.toJson(it))
             kv.encode("UserName", login_username_edit.text.toString())
             kv.encode("PassWord", login_password_edit.text.toString())
-            startActivity(Intent(this@LoginActivity, WanMainActivity::class.java))
         })
     }
 }

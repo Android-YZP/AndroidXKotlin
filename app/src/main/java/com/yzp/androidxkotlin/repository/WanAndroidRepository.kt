@@ -2,6 +2,7 @@ package com.yzp.androidxkotlin.repository
 
 import com.yzp.androidxkotlin.api.WanApiService
 import com.yzp.androidxkotlin.base.BaseResult
+import com.yzp.androidxkotlin.bean.HomeBean
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.http.RetrofitClient
 import com.yzp.androidxkotlin.bean.LoginBean
@@ -21,9 +22,6 @@ class WanAndroidRepository private constructor(
     suspend fun getTopAritrilList(): BaseResult<Any> = mService.getTopAritrilList()
 
 
-//    suspend fun getAritrilList(): BaseResult<Any> {
-//        return mService.getAritrilList()
-//    }
 
     suspend fun getProjecTitle(): BaseResult<Any> {
         return mService.getProjecTitle()
@@ -147,6 +145,10 @@ class WanAndroidRepository private constructor(
 
     suspend fun doneTodo(id: Int, status: Int): BaseResult<Any> {
         return mService.doneTodo(id, status)
+    }
+
+    suspend fun getArticleList(page: Int): BaseResult<HomeBean> {
+        return mService.getArticleList(page)
     }
 
     suspend fun login(username: String, password: String): BaseResult<LoginBean> {

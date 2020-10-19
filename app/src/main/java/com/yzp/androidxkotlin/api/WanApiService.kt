@@ -1,6 +1,7 @@
 package com.yzp.androidxkotlin.api
 
 import com.yzp.androidxkotlin.base.BaseResult
+import com.yzp.androidxkotlin.bean.HomeBean
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.bean.LoginBean
 import retrofit2.http.*
@@ -63,7 +64,7 @@ interface WanApiService {
      * 获取首页文章数据
      */
     @GET("article/list/{page}/json")
-    suspend fun getAritrilList(@Path("page") pageNo: Int): BaseResult<Any>
+    suspend fun getArticleList(@Path("page") pageNo: Int): BaseResult<HomeBean>
 
     /**
      * 项目分类标题

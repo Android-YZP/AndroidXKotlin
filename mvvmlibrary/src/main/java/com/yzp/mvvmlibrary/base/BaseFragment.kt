@@ -66,6 +66,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
     private fun onVisible() {
         if (lifecycle.currentState == Lifecycle.State.STARTED && isFirst) {
             lazyLoadData()
+            initListener()
             isFirst = false
         }
     }
@@ -74,6 +75,10 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
      * 懒加载
      */
     open fun lazyLoadData() {}
+   /**
+     * 初始化监听
+     */
+    open fun initListener() {}
 
     /**
      * 注册 UI 事件

@@ -33,8 +33,6 @@ class TopBar : FrameLayout {
         if (typedArray != null) {
             val title = typedArray.getString(R.styleable.TopBar_title)
             val isBack = typedArray.getBoolean(R.styleable.TopBar_isBack, true)
-
-            LogUtils.e("$isBack,,,,")
             if (title != null) {
                 mTvTitle.text = title
             }
