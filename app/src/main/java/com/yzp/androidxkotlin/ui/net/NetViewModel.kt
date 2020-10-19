@@ -25,8 +25,6 @@ class NetViewModel : BaseViewModel() {
     fun getBanner(): MutableLiveData<BaseResult<List<BannerBean>>> {
         launchGo({
             mBanners.value = homeRepository.getBannerData()
-        }, {
-            mBanners.value = null
         })
         return mBanners
     }
@@ -38,8 +36,6 @@ class NetViewModel : BaseViewModel() {
         launchGo({
             mLogin.value = homeRepository.login()
 
-        }, {
-            mLogin.value = null
         })
         return mLogin
     }

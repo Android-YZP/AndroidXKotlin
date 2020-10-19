@@ -42,11 +42,11 @@ open class BaseViewModel : AndroidViewModel(Utils.getApp()), LifecycleObserver {
      */
     fun launchGo(
         block: suspend CoroutineScope.() -> Unit,
+        isShowDialog: Boolean = true,
         error: suspend CoroutineScope.(ResponseThrowable) -> Unit = {
             defUI.toastEvent.postValue("${it.code}:${it.errMsg}")
         },
-        complete: suspend CoroutineScope.() -> Unit = {},
-        isShowDialog: Boolean = true
+        complete: suspend CoroutineScope.() -> Unit = {}
     ) {
         if (isShowDialog) defUI.showDialog.call()
         launchUI {

@@ -92,6 +92,7 @@ abstract class BaseFragment<VM : BaseViewModel, DB : ViewDataBinding> : Fragment
         })
         viewModel.defUI.toastEvent.observe(viewLifecycleOwner, Observer {
             ToastUtils.showShort(it)
+            handleEvent(it)
         })
         viewModel.defUI.msgEvent.observe(viewLifecycleOwner, Observer {
             handleEvent(it)

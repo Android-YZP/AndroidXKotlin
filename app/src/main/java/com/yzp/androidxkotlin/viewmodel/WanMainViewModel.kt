@@ -7,6 +7,7 @@ import com.yzp.androidxkotlin.bean.HomeBean
 import com.yzp.androidxkotlin.repository.WanAndroidRepository
 import com.yzp.androidxkotlin.bean.LoginBean
 import com.yzp.mvvmlibrary.base.BaseViewModel
+import com.yzp.mvvmlibrary.base.LoadingDialog
 
 class WanMainViewModel : BaseViewModel() {
 
@@ -18,17 +19,17 @@ class WanMainViewModel : BaseViewModel() {
     private val mHomeList = MutableLiveData<BaseResult<HomeBean>>()
 
 
-    fun getBanner(): MutableLiveData<BaseResult<List<BannerBean>>> {
+    fun getBanner(isShowDialog: Boolean): MutableLiveData<BaseResult<List<BannerBean>>> {
         launchGo({
             mBanners.value = wanAndroidRepository.getBannerData()
-        })
+        }, isShowDialog)
         return mBanners
     }
 
     fun getHomeList(page: Int): MutableLiveData<BaseResult<HomeBean>> {
         launchGo({
             mHomeList.value = wanAndroidRepository.getArticleList(page)
-        })
+        }, false)
         return mHomeList
     }
 
