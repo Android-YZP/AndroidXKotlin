@@ -23,6 +23,10 @@ class LoginActivity : BaseActivity<PersonViewModel, ViewDataBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
         val user = kv.decodeString("User")
+        if (user != null) {
+            startActivity(Intent(this, WanMainActivity::class.java))
+            finish()
+        }
         login_username_edit.setText(
             if (kv.decodeString("UserName") == null) "" else kv.decodeString("UserName")
         )
@@ -46,7 +50,6 @@ class LoginActivity : BaseActivity<PersonViewModel, ViewDataBinding>() {
         }
     }
 
-
     private fun login() {
         viewModel.login(
             login_username_edit.text.toString(),
@@ -55,6 +58,7 @@ class LoginActivity : BaseActivity<PersonViewModel, ViewDataBinding>() {
             kv.encode("User", GsonUtils.toJson(it))
             kv.encode("UserName", login_username_edit.text.toString())
             kv.encode("PassWord", login_password_edit.text.toString())
+            finish()
         })
     }
 }

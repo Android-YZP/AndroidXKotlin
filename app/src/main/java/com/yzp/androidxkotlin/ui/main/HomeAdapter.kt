@@ -10,8 +10,6 @@ import com.yzp.androidxkotlin.bean.DataX
 class HomeAdapter(mData: MutableList<DataX>) : BaseQuickAdapter<DataX, BaseViewHolder>(
     R.layout.layout_item_home, mData
 ) {
-
-
     override fun convert(holder: BaseViewHolder, item: DataX) {
         val tv_author = holder.getView<View>(R.id.tv_author) as TextView
         val tv_title = holder.getView<View>(R.id.tv_title) as TextView

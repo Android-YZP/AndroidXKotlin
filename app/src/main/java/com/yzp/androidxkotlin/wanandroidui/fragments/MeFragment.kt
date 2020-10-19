@@ -35,8 +35,8 @@ class MeFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
 
     override fun initView(savedInstanceState: Bundle?) {
         with(vp_square) {
-            mData.add(AndroidFragment())//体系
             mData.add(SettingFragment())//广场
+            mData.add(AndroidFragment())//体系
             adapter = MainPagerAdapter(childFragmentManager, mData)
             offscreenPageLimit = 2
         }
