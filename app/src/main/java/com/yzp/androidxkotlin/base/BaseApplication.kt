@@ -1,8 +1,12 @@
 package com.yzp.androidxkotlin.base
 
 import cat.ereza.customactivityoncrash.config.CaocConfig
+import com.blankj.utilcode.util.LogUtils
+import com.tencent.mmkv.MMKV
+import com.yzp.androidxkotlin.ui.ErrorActivity
 import com.yzp.androidxkotlin.ui.main.MainActivity
 import com.yzp.mvvmlibrary.app.App
+
 
 class BaseApplication : App() {
 
@@ -21,5 +25,8 @@ class BaseApplication : App() {
 //            .errorActivity(ErrorActivity::class.java) //发生错误跳转的activity
             .eventListener(null) //允许你指定事件侦听器，以便在库显示错误活动 default: null
             .apply()
+
+        val rootDir = MMKV.initialize(this)
+        LogUtils.e("mmkv root: $rootDir")
     }
 }
