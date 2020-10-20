@@ -1,27 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="vertical">
 
     <ImageView
-        android:layout_width="@dimen/dimen_200"
-        android:layout_height="@dimen/dimen_200"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:scaleType="centerCrop"
         android:src="@mipmap/logo" />
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="@dimen/dimen_100"
         android:orientation="horizontal">
-
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
+            android:gravity="center"
             android:text="出错了,请点击重试"
-            android:textColor="@color/them_colors" />
+            android:textColor="@color/them_colors"
+            android:textSize="25sp" />
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>
