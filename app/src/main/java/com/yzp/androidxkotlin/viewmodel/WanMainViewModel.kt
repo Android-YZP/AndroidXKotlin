@@ -1,6 +1,7 @@
 package com.yzp.androidxkotlin.viewmodel
 
 import androidx.lifecycle.MutableLiveData
+import com.tencent.mmkv.MMKV
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.bean.*
@@ -9,7 +10,7 @@ import com.yzp.mvvmlibrary.base.BaseViewModel
 import com.yzp.mvvmlibrary.base.LoadingDialog
 
 class WanMainViewModel : BaseViewModel() {
-
+    val kv = MMKV.defaultMMKV();
     private val wanAndroidRepository by lazy {
         WanAndroidRepository.getInstance()
     }
@@ -46,7 +47,8 @@ class WanMainViewModel : BaseViewModel() {
         return mQuestionList
     }
 
-    fun getSystemData(): MutableLiveData<BaseResult<List<SystemBean>>> {
+    fun getSystemData(isRefresh: Boolean): MutableLiveData<BaseResult<List<SystemBean>>> {
+        if (isRefresh) kv.putString("getSystemData", "")
         launchGo({
             mSystemData.value = wanAndroidRepository.getSystemData()
         }, true)
@@ -60,10 +62,13 @@ class WanMainViewModel : BaseViewModel() {
         return mSquareData
     }
 
-    fun getNavigationData(): MutableLiveData<BaseResult<List<NaviBean>>> {
+    fun getNavigationData(isRefresh: Boolean): MutableLiveData<BaseResult<List<NaviBean>>> {
+
+        if (isRefresh) kv.putString("getNavigationData", "")
         launchGo({
-            mNavigationData.value = wanAndroidRepository.getNavigationData()
+            mNavigationData.value = wanAndroidRepository.getNavigationData(isRefresh)
         }, true)
+
         return mNavigationData
     }
 

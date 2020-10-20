@@ -1,11 +1,18 @@
 package com.yzp.androidxkotlin.repository
 
+import android.R.string
+import androidx.lifecycle.MutableLiveData
+import com.blankj.utilcode.util.GsonUtils
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.tencent.mmkv.MMKV
 import com.yzp.androidxkotlin.api.WanApiService
 import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.bean.*
-import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.http.RetrofitClient
+import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.mvvmlibrary.base.BaseModel
+
 
 class WanAndroidRepository private constructor(
 ) : BaseModel() {
@@ -19,7 +26,6 @@ class WanAndroidRepository private constructor(
 
 
     suspend fun getTopAritrilList(): BaseResult<Any> = mService.getTopAritrilList()
-
 
 
     suspend fun getProjecTitle(): BaseResult<Any> {
@@ -63,15 +69,27 @@ class WanAndroidRepository private constructor(
 //    }
 
     suspend fun getSystemData(): BaseResult<List<SystemBean>> {
-        return mService.getSystemData()
+        val s = MMKV.defaultMMKV().getString("getSystemData", "")
+        return if (s.isNullOrEmpty()) {
+            mService.getSystemData()
+        } else {
+            BaseResult<List<SystemBean>>("", 0,
+                GsonUtils.fromJson(s, object : TypeToken<List<SystemBean?>?>() {}.type))
+        }
     }
 
 //    suspend fun getSystemChildData(): BaseResult<Any> {
 //        return mService.getSystemChildData()
 //    }
 
-    suspend fun getNavigationData(): BaseResult<List<NaviBean>> {
-        return mService.getNavigationData()
+    suspend fun getNavigationData(isRefresh: Boolean): BaseResult<List<NaviBean>> {
+        val s = MMKV.defaultMMKV().getString("getNavigationData", "")
+        return if (s.isNullOrEmpty()) {
+            mService.getNavigationData()
+        } else {
+            BaseResult<List<NaviBean>>("", 0,
+                GsonUtils.fromJson(s, object : TypeToken<List<NaviBean?>?>() {}.type))
+        }
     }
 
 //    suspend fun collect(): BaseResult<Any> {
@@ -159,7 +177,7 @@ class WanAndroidRepository private constructor(
     }
 
     suspend fun register(username: String, password: String, password2: String): BaseResult<Any> {
-        return mService.register(username, password,password2)
+        return mService.register(username, password, password2)
     }
 
     companion object {
