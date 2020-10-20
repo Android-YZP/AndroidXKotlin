@@ -6,6 +6,7 @@ import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.bean.HomeBean
 import com.yzp.androidxkotlin.repository.WanAndroidRepository
 import com.yzp.androidxkotlin.bean.LoginBean
+import com.yzp.androidxkotlin.bean.QuestionBean
 import com.yzp.mvvmlibrary.base.BaseViewModel
 import com.yzp.mvvmlibrary.base.LoadingDialog
 
@@ -17,7 +18,7 @@ class WanMainViewModel : BaseViewModel() {
 
     private val mBanners = MutableLiveData<BaseResult<List<BannerBean>>>()
     private val mHomeList = MutableLiveData<BaseResult<HomeBean>>()
-    private val mQuestionList = MutableLiveData<BaseResult<Any>>()
+    private val mQuestionList = MutableLiveData<BaseResult<QuestionBean>>()
 
 
     fun getBanner(isShowDialog: Boolean): MutableLiveData<BaseResult<List<BannerBean>>> {
@@ -34,10 +35,10 @@ class WanMainViewModel : BaseViewModel() {
         return mHomeList
     }
 
-    fun getQuestionList(page: Int): MutableLiveData<BaseResult<Any>> {
+    fun getQuestionList(page: Int,isShowDialog: Boolean): MutableLiveData<BaseResult<QuestionBean>> {
         launchGo({
             mQuestionList.value = wanAndroidRepository.getQuestionList(page)
-        }, false)
+        }, isShowDialog)
         return mQuestionList
     }
 

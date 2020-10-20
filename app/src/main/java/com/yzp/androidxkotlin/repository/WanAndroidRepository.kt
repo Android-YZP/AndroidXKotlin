@@ -6,6 +6,7 @@ import com.yzp.androidxkotlin.bean.HomeBean
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.http.RetrofitClient
 import com.yzp.androidxkotlin.bean.LoginBean
+import com.yzp.androidxkotlin.bean.QuestionBean
 import com.yzp.mvvmlibrary.base.BaseModel
 
 class WanAndroidRepository private constructor(
@@ -147,7 +148,7 @@ class WanAndroidRepository private constructor(
         return mService.doneTodo(id, status)
     }
 
-    suspend fun getQuestionList(page: Int): BaseResult<Any> {
+    suspend fun getQuestionList(page: Int): BaseResult<QuestionBean> {
         return mService.getQuestionList(page)
     }
 

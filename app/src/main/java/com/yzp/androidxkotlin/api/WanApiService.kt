@@ -4,6 +4,7 @@ import com.yzp.androidxkotlin.base.BaseResult
 import com.yzp.androidxkotlin.bean.HomeBean
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.bean.LoginBean
+import com.yzp.androidxkotlin.bean.QuestionBean
 import retrofit2.http.*
 
 /**
@@ -88,7 +89,7 @@ interface WanApiService {
     @GET("wenda/list/{page}/json")
     suspend fun getQuestionList(
         @Path("page") page: Int,
-    ): BaseResult<Any>
+    ): BaseResult<QuestionBean>
 
     /**
      * 获取最新项目数据
