@@ -51,6 +51,9 @@ class AndroidFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
     override fun lazyLoadData() {
         data.add(MainBean("Wan Android", LoginActivity::class.java))
         data.add(MainBean("协程", CoroutineActivity::class.java))
+        data.add(MainBean("RxJava", CoroutineActivity::class.java))
+        data.add(MainBean("热修复", CoroutineActivity::class.java))
+        data.add(MainBean("组件化", CoroutineActivity::class.java))
         data.add(MainBean("Lifecycle的使用", LifecycleActivity::class.java))
         data.add(MainBean("LiveDataViewModel的使用", LiveDataViewModelActivity::class.java))
         data.add(MainBean("Navigation的使用", NavActivity::class.java))
