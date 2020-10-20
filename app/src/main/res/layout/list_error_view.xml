@@ -21,7 +21,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
-            android:text="没有数据了"
+            android:text="出错了,请点击重试"
             android:textColor="@color/them_colors" />
     </LinearLayout>
 </LinearLayout>
