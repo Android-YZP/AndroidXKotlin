@@ -3,13 +3,16 @@ package com.yzp.androidxkotlin.wanandroidui.activitys
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
+import com.blankj.utilcode.util.ToastUtils
 import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.adapters.MainPagerAdapter
 import com.yzp.androidxkotlin.wanandroidui.fragments.MeFragment
@@ -121,4 +124,16 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
             ViewPagerHelper.bind(this, vp_main)
         }
     }
+
+    var isOut: Boolean = false
+    override fun onBackPressed() {
+        ToastUtils.showShort("再按一次返回键退出")
+        if (isOut) super.onBackPressed()
+        isOut = true;
+        Handler().postDelayed(Runnable {
+            isOut = false;
+        }, 2000)
+
+    }
+
 }

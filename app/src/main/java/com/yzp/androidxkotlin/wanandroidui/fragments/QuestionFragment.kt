@@ -1,19 +1,15 @@
 package com.yzp.androidxkotlin.wanandroidui.fragments
 
-import android.os.Bundle
 import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.blankj.utilcode.util.GsonUtils
-import com.blankj.utilcode.util.LogUtils
 import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.bean.Datas
 import com.yzp.androidxkotlin.ui.main.QuestionAdapter
 import com.yzp.androidxkotlin.viewmodel.WanMainViewModel
 import com.yzp.mvvmlibrary.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_question.*
-import kotlinx.android.synthetic.main.fragment_wan_home.*
 
 
 class QuestionFragment : BaseFragment<WanMainViewModel, ViewDataBinding>() {
