@@ -1,11 +1,8 @@
 package com.yzp.androidxkotlin.api
 
 import com.yzp.androidxkotlin.base.BaseResult
-import com.yzp.androidxkotlin.bean.HomeBean
+import com.yzp.androidxkotlin.bean.*
 import com.yzp.androidxkotlin.ui.banner.BannerBean
-import com.yzp.androidxkotlin.bean.LoginBean
-import com.yzp.androidxkotlin.bean.QuestionBean
-import com.yzp.androidxkotlin.bean.SystemBean
 import retrofit2.http.*
 
 /**
@@ -132,7 +129,7 @@ interface WanApiService {
      * 广场列表数据
      */
     @GET("user_article/list/{page}/json")
-    suspend fun getSquareData(@Path("page") page: Int): BaseResult<Any>
+    suspend fun getSquareData(@Path("page") page: Int): BaseResult<SquareBean>
 
     /**
      * 每日一问列表数据

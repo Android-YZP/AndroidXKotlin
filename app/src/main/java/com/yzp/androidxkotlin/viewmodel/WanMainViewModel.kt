@@ -3,11 +3,8 @@ package com.yzp.androidxkotlin.viewmodel
 import androidx.lifecycle.MutableLiveData
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.base.BaseResult
-import com.yzp.androidxkotlin.bean.HomeBean
+import com.yzp.androidxkotlin.bean.*
 import com.yzp.androidxkotlin.repository.WanAndroidRepository
-import com.yzp.androidxkotlin.bean.LoginBean
-import com.yzp.androidxkotlin.bean.QuestionBean
-import com.yzp.androidxkotlin.bean.SystemBean
 import com.yzp.mvvmlibrary.base.BaseViewModel
 import com.yzp.mvvmlibrary.base.LoadingDialog
 
@@ -21,6 +18,7 @@ class WanMainViewModel : BaseViewModel() {
     private val mHomeList = MutableLiveData<BaseResult<HomeBean>>()
     private val mQuestionList = MutableLiveData<BaseResult<QuestionBean>>()
     private val mSystemData = MutableLiveData<BaseResult<List<SystemBean>>>()
+    private val mSquareData = MutableLiveData<BaseResult<SquareBean>>()
 
 
     fun getBanner(isShowDialog: Boolean): MutableLiveData<BaseResult<List<BannerBean>>> {
@@ -37,7 +35,10 @@ class WanMainViewModel : BaseViewModel() {
         return mHomeList
     }
 
-    fun getQuestionList(page: Int,isShowDialog: Boolean): MutableLiveData<BaseResult<QuestionBean>> {
+    fun getQuestionList(
+        page: Int,
+        isShowDialog: Boolean
+    ): MutableLiveData<BaseResult<QuestionBean>> {
         launchGo({
             mQuestionList.value = wanAndroidRepository.getQuestionList(page)
         }, isShowDialog)
@@ -49,6 +50,13 @@ class WanMainViewModel : BaseViewModel() {
             mSystemData.value = wanAndroidRepository.getSystemData()
         }, true)
         return mSystemData
+    }
+
+    fun getSquareData(page: Int, isShowDialog: Boolean): MutableLiveData<BaseResult<SquareBean>> {
+        launchGo({
+            mSquareData.value = wanAndroidRepository.getSquareData(page)
+        }, isShowDialog)
+        return mSquareData
     }
 
 

@@ -2,12 +2,9 @@ package com.yzp.androidxkotlin.repository
 
 import com.yzp.androidxkotlin.api.WanApiService
 import com.yzp.androidxkotlin.base.BaseResult
-import com.yzp.androidxkotlin.bean.HomeBean
+import com.yzp.androidxkotlin.bean.*
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.http.RetrofitClient
-import com.yzp.androidxkotlin.bean.LoginBean
-import com.yzp.androidxkotlin.bean.QuestionBean
-import com.yzp.androidxkotlin.bean.SystemBean
 import com.yzp.mvvmlibrary.base.BaseModel
 
 class WanAndroidRepository private constructor(
@@ -57,9 +54,9 @@ class WanAndroidRepository private constructor(
 //        return mService.getSearchDataByKey()
 //    }
 
-//    suspend fun getSquareData(): BaseResult<Any> {
-//        return mService.getSquareData()
-//    }
+    suspend fun getSquareData(page: Int): BaseResult<SquareBean> {
+        return mService.getSquareData(page)
+    }
 
 //    suspend fun getAskData(): BaseResult<Any> {
 //        return mService.getAskData()

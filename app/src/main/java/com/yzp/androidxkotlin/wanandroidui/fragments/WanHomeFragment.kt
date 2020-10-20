@@ -11,7 +11,7 @@ import com.youth.banner.transformer.ScaleInTransformer
 import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.bean.DataX
 import com.yzp.androidxkotlin.ui.banner.BannerBean
-import com.yzp.androidxkotlin.ui.main.HomeAdapter
+import com.yzp.androidxkotlin.wanandroidui.adapter.HomeAdapter
 import com.yzp.androidxkotlin.viewmodel.WanMainViewModel
 import com.yzp.androidxkotlin.wanandroidui.adapter.HomeHeadAdapter
 import com.yzp.mvvmlibrary.base.BaseFragment
@@ -23,13 +23,16 @@ class WanHomeFragment : BaseFragment<WanMainViewModel, ViewDataBinding>() {
     var mPage = 0;
     private var data = ArrayList<DataX>()
     private var dataBanner = ArrayList<BannerBean>()
-    private val mHomeAdapter by lazy { HomeAdapter(data) }
+    private val mHomeAdapter by lazy {
+        HomeAdapter(
+            data
+        )
+    }
     private val mHomeHeadAdapter by lazy { HomeHeadAdapter(dataBanner) }
 
     override fun layoutId(): Int = R.layout.fragment_wan_home
 
     override fun lazyLoadData() {
-        super.lazyLoadData()
         with(rv_home) {
             val linearLayoutManager = LinearLayoutManager(context)
             layoutManager = linearLayoutManager
