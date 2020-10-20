@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import com.yzp.androidxkotlin.R
@@ -22,9 +23,11 @@ import net.lucode.hackware.magicindicator.buildins.commonnavigator.abs.IPagerTit
 import net.lucode.hackware.magicindicator.buildins.commonnavigator.titles.CommonPagerTitleView
 
 class SquareFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
-    private val CHANNELSICON = arrayOf(R.mipmap.ic_qq_group,
-        R.mipmap.ic_jianshu,
-        R.mipmap.ic_read_later)
+    private val CHANNELSICON = arrayOf(
+        "体系",
+        "广场",
+        "导航"
+    )
     private var mData: MutableList<Fragment> = ArrayList()
 
     override fun layoutId(): Int = R.layout.fragment_square
@@ -34,7 +37,7 @@ class SquareFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
             mData.add(SystemFragment())//体系
             mData.add(KnowledgeFragment())//广场
             mData.add(NavigationFragment())//导航
-            adapter = MainPagerAdapter(childFragmentManager,mData)
+            adapter = MainPagerAdapter(childFragmentManager, mData)
             offscreenPageLimit = 2
         }
         initMagicIndicator()
@@ -59,18 +62,19 @@ class SquareFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
                         R.layout.item_bottom_bar_layout,
                         null
                     )
-                    val titleImg = customLayout.findViewById<View>(R.id.title_img) as ImageView
-                    titleImg.setImageResource(CHANNELSICON[index])
+                    val titleText = customLayout.findViewById<View>(R.id.title_txt) as TextView
+                    customLayout.findViewById<View>(R.id.title_img).visibility = View.GONE
+                    titleText.text = CHANNELSICON[index]
                     commonPagerTitleView.setContentView(customLayout)
 
                     commonPagerTitleView.onPagerTitleChangeListener =
                         object : CommonPagerTitleView.OnPagerTitleChangeListener {
                             override fun onSelected(index: Int, totalCount: Int) {
-                                titleImg.setColorFilter(Color.WHITE);
+                                titleText.setTextColor(Color.WHITE);
                             }
 
                             override fun onDeselected(index: Int, totalCount: Int) {
-                                titleImg.setColorFilter(Color.LTGRAY);
+                                titleText.setTextColor(Color.LTGRAY);
                             }
 
                             override fun onLeave(
@@ -79,8 +83,8 @@ class SquareFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
                                 leavePercent: Float,
                                 leftToRight: Boolean
                             ) {
-                                titleImg.scaleX = 1.2f + (0.8f - 1.2f) * leavePercent
-                                titleImg.scaleY = 1.2f + (0.8f - 1.2f) * leavePercent
+                                titleText.scaleX = 1.2f + (0.8f - 1.2f) * leavePercent
+                                titleText.scaleY = 1.2f + (0.8f - 1.2f) * leavePercent
                             }
 
                             override fun onEnter(
@@ -89,8 +93,8 @@ class SquareFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
                                 enterPercent: Float,
                                 leftToRight: Boolean
                             ) {
-                                titleImg.scaleX = 0.8f + (1.2f - 0.8f) * enterPercent
-                                titleImg.scaleY = 0.8f + (1.2f - 0.8f) * enterPercent
+                                titleText.scaleX = 0.8f + (1.2f - 0.8f) * enterPercent
+                                titleText.scaleY = 0.8f + (1.2f - 0.8f) * enterPercent
                             }
                         }
 

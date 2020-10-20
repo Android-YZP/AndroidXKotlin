@@ -8,14 +8,16 @@
 
     <View
         android:layout_width="match_parent"
-        android:background="@color/colorPrimary"
-        android:layout_height="@dimen/dimen_20" />
+        android:layout_height="@dimen/dimen_20"
+        android:background="@color/colorPrimary" />
 
     <net.lucode.hackware.magicindicator.MagicIndicator
         android:id="@+id/mi_square"
         android:layout_width="match_parent"
+        android:layout_height="@dimen/dimen_50"
         android:background="@color/colorPrimary"
-        android:layout_height="@dimen/dimen_50" />
+        android:paddingStart="@dimen/dimen_50"
+        android:paddingEnd="@dimen/dimen_50" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/vp_square"

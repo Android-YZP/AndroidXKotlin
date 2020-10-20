@@ -19,6 +19,7 @@ class WanMainViewModel : BaseViewModel() {
     private val mQuestionList = MutableLiveData<BaseResult<QuestionBean>>()
     private val mSystemData = MutableLiveData<BaseResult<List<SystemBean>>>()
     private val mSquareData = MutableLiveData<BaseResult<SquareBean>>()
+    private val mNavigationData = MutableLiveData<BaseResult<List<NaviBean>>>()
 
 
     fun getBanner(isShowDialog: Boolean): MutableLiveData<BaseResult<List<BannerBean>>> {
@@ -57,6 +58,13 @@ class WanMainViewModel : BaseViewModel() {
             mSquareData.value = wanAndroidRepository.getSquareData(page)
         }, isShowDialog)
         return mSquareData
+    }
+
+    fun getNavigationData(): MutableLiveData<BaseResult<List<NaviBean>>> {
+        launchGo({
+            mNavigationData.value = wanAndroidRepository.getNavigationData()
+        }, true)
+        return mNavigationData
     }
 
 

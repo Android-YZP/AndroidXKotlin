@@ -156,7 +156,7 @@ interface WanApiService {
      * 获取导航数据
      */
     @GET("navi/json")
-    suspend fun getNavigationData(): BaseResult<Any>
+    suspend fun getNavigationData(): BaseResult<List<NaviBean>>
 
     /**
      * 收藏文章

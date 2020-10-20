@@ -70,7 +70,7 @@ class WanAndroidRepository private constructor(
 //        return mService.getSystemChildData()
 //    }
 
-    suspend fun getNavigationData(): BaseResult<Any> {
+    suspend fun getNavigationData(): BaseResult<List<NaviBean>> {
         return mService.getNavigationData()
     }
 

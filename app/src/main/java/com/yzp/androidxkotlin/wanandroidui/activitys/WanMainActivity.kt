@@ -78,6 +78,7 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
                         null
                     )
                     val titleImg = customLayout.findViewById<View>(R.id.title_img) as ImageView
+                    customLayout.findViewById<View>(R.id.title_txt).visibility = View.GONE
                     titleImg.setImageResource(CHANNELSICON[index])
                     commonPagerTitleView.setContentView(customLayout)
 
