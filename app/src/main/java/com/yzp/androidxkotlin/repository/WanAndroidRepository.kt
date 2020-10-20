@@ -147,6 +147,10 @@ class WanAndroidRepository private constructor(
         return mService.doneTodo(id, status)
     }
 
+    suspend fun getQuestionList(page: Int): BaseResult<Any> {
+        return mService.getQuestionList(page)
+    }
+
     suspend fun getArticleList(page: Int): BaseResult<HomeBean> {
         return mService.getArticleList(page)
     }

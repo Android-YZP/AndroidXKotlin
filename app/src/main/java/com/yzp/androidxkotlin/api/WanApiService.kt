@@ -82,6 +82,15 @@ interface WanApiService {
     ): BaseResult<Any>
 
     /**
+     * 问答
+     * pageId,拼接在链接上，例如上面的1
+     */
+    @GET("wenda/list/{page}/json")
+    suspend fun getQuestionList(
+        @Path("page") page: Int,
+    ): BaseResult<Any>
+
+    /**
      * 获取最新项目数据
      */
     @GET("article/listproject/{page}/json")
