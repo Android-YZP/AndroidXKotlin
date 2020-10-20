@@ -19,7 +19,7 @@ class SystemAdapter(mData: MutableList<SystemBean>) : BaseQuickAdapter<SystemBea
         val tv_title = holder.getView<View>(R.id.tv_title) as TextView
         val fbl_desc = holder.getView<View>(R.id.fbl_system) as FlexboxLayout
         tv_title.text = item.name
-
+        fbl_desc.removeAllViews()
         for (value in item.children) {
             val textView: TextView =
                 LayoutInflater.from(context).inflate(R.layout.item_flb, fbl_desc, false) as TextView
