@@ -4,7 +4,6 @@ import android.view.View
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.blankj.utilcode.util.LogUtils
 import com.blankj.utilcode.util.ToastUtils
 import com.chad.library.adapter.base.listener.OnItemClickListener
 import com.youth.banner.Banner
@@ -13,7 +12,6 @@ import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.bean.DataX
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.ui.main.HomeAdapter
-import com.yzp.androidxkotlin.ui.main.MainHeadAdapter
 import com.yzp.androidxkotlin.viewmodel.WanMainViewModel
 import com.yzp.androidxkotlin.wanandroidui.adapter.HomeHeadAdapter
 import com.yzp.mvvmlibrary.base.BaseFragment
@@ -36,6 +34,7 @@ class WanHomeFragment : BaseFragment<WanMainViewModel, ViewDataBinding>() {
             val linearLayoutManager = LinearLayoutManager(context)
             layoutManager = linearLayoutManager
             adapter = mHomeAdapter
+
         }
 
         viewModel.getBanner(!rl_home.isRefreshing).observe(this, Observer {
@@ -87,6 +86,7 @@ class WanHomeFragment : BaseFragment<WanMainViewModel, ViewDataBinding>() {
                 }
                 if (isLoading) finishLoadMore(100)
             }
+
             if (it.data.datas.isEmpty()) {
                 rl_home.setNoMoreData(true)
                 return@Observer
@@ -96,7 +96,18 @@ class WanHomeFragment : BaseFragment<WanMainViewModel, ViewDataBinding>() {
         })
     }
 
+    private fun setErrorView(){
+        val errorView: View =
+            layoutInflater.inflate(R.layout.list_error_view, null, false)
+        errorView.setOnClickListener {
+            mPage = 0;
+            viewModel.getBanner(!rl_home.isRefreshing)
+        }
+        mHomeAdapter.setEmptyView(errorView)
+    }
+
     override fun handleEvent(msg: String) {
+        setErrorView()
         with(rl_home) {
             if (isRefreshing) finishRefresh(100)
             if (isLoading) finishLoadMore(100)
