@@ -5,6 +5,7 @@ import com.yzp.androidxkotlin.bean.HomeBean
 import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.bean.LoginBean
 import com.yzp.androidxkotlin.bean.QuestionBean
+import com.yzp.androidxkotlin.bean.SystemBean
 import retrofit2.http.*
 
 /**
@@ -143,7 +144,7 @@ interface WanApiService {
      * 获取体系数据
      */
     @GET("tree/json")
-    suspend fun getSystemData(): BaseResult<Any>
+    suspend fun getSystemData(): BaseResult<List<SystemBean>>
 
     /**
      * 知识体系下的文章数据

@@ -6,7 +6,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.bean.Datas
-import com.yzp.androidxkotlin.ui.main.QuestionAdapter
+import com.yzp.androidxkotlin.wanandroidui.adapter.QuestionAdapter
 import com.yzp.androidxkotlin.viewmodel.WanMainViewModel
 import com.yzp.mvvmlibrary.base.BaseFragment
 import kotlinx.android.synthetic.main.fragment_question.*

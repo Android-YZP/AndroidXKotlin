@@ -7,6 +7,7 @@ import com.yzp.androidxkotlin.ui.banner.BannerBean
 import com.yzp.androidxkotlin.http.RetrofitClient
 import com.yzp.androidxkotlin.bean.LoginBean
 import com.yzp.androidxkotlin.bean.QuestionBean
+import com.yzp.androidxkotlin.bean.SystemBean
 import com.yzp.mvvmlibrary.base.BaseModel
 
 class WanAndroidRepository private constructor(
@@ -64,7 +65,7 @@ class WanAndroidRepository private constructor(
 //        return mService.getAskData()
 //    }
 
-    suspend fun getSystemData(): BaseResult<Any> {
+    suspend fun getSystemData(): BaseResult<List<SystemBean>> {
         return mService.getSystemData()
     }
 

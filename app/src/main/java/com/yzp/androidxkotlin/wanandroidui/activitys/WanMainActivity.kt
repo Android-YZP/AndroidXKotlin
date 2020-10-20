@@ -125,7 +125,7 @@ class WanMainActivity : BaseActivity<NoViewModel, ViewDataBinding>() {
         }
     }
 
-    var isOut: Boolean = false
+    private var isOut: Boolean = false
     override fun onBackPressed() {
         ToastUtils.showShort("再按一次返回键退出")
         if (isOut) super.onBackPressed()

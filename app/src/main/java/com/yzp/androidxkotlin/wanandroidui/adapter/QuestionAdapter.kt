@@ -1,4 +1,4 @@
-package com.yzp.androidxkotlin.ui.main
+package com.yzp.androidxkotlin.wanandroidui.adapter
 
 import android.text.Html
 import android.view.View
@@ -6,7 +6,6 @@ import android.widget.TextView
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.viewholder.BaseViewHolder
 import com.yzp.androidxkotlin.R
-import com.yzp.androidxkotlin.bean.DataX
 import com.yzp.androidxkotlin.bean.Datas
 
 class QuestionAdapter(mData: MutableList<Datas>) : BaseQuickAdapter<Datas, BaseViewHolder>(

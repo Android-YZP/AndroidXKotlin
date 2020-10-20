@@ -1,9 +1,11 @@
 package com.yzp.androidxkotlin.base
 
 import cat.ereza.customactivityoncrash.config.CaocConfig
-import com.blankj.utilcode.util.LogUtils
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.FormatStrategy
+import com.orhanobut.logger.Logger
+import com.orhanobut.logger.PrettyFormatStrategy
 import com.tencent.mmkv.MMKV
-import com.yzp.androidxkotlin.ui.ErrorActivity
 import com.yzp.androidxkotlin.ui.main.MainActivity
 import com.yzp.mvvmlibrary.app.App
 
@@ -26,5 +28,17 @@ class BaseApplication : App() {
             .eventListener(null) //允许你指定事件侦听器，以便在库显示错误活动 default: null
             .apply()
          MMKV.initialize(this)
+
+        //Logger的初始化
+
+
+        //Logger的初始化
+        val formatStrategy: FormatStrategy = PrettyFormatStrategy.newBuilder()
+            .showThreadInfo(true) // 显示线程信息
+            .methodCount(1) // 显示这一行的Log又几个方法的嵌套
+            .methodOffset(0) // 隐藏内部方法调用，以抵消。默认的5
+            .tag("=======》") // 每个日志的全局标记。默认PRETTY_LOGGER
+            .build()
+        Logger.addLogAdapter(AndroidLogAdapter(formatStrategy))
     }
 }

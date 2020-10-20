@@ -33,4 +33,6 @@
     <color name="them_colors">#4282f4</color>
     <color name="red">#f67068</color>
     <color name="basic_ui_dialog_loading_circle">#4282f4</color>
+
+    <color name="foreground_top">#eeeeee</color>
 </resources>
