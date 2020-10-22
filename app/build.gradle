@@ -97,8 +97,11 @@ dependencies {
     implementation 'com.github.hackware1993:MagicIndicator:1.7.0'
     //图片加载
     implementation "io.coil-kt:coil:1.0.0-rc3"
+    implementation "io.coil-kt:coil-gif:1.0.0-rc3"
     //流式布局
     implementation 'com.google.android:flexbox:2.0.1'
     implementation 'com.orhanobut:logger:2.2.0'
+
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
 
 }

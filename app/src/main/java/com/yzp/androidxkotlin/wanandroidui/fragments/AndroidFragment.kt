@@ -15,6 +15,7 @@ import com.yzp.androidxkotlin.R
 import com.yzp.androidxkotlin.ui.CoroutineActivity
 import com.yzp.androidxkotlin.ui.DialogActivity
 import com.yzp.androidxkotlin.ui.UpdateActivity
+import com.yzp.androidxkotlin.ui.banner.BannerActivity
 import com.yzp.androidxkotlin.ui.databinding.DataBindingActivity
 import com.yzp.androidxkotlin.ui.lifecycle.LifecycleActivity
 import com.yzp.androidxkotlin.ui.livedataviewmodel.LiveDataViewModelActivity
@@ -52,7 +53,7 @@ class AndroidFragment : BaseFragment<NoViewModel, ViewDataBinding>() {
         data.add(MainBean("Wan Android", LoginActivity::class.java))
         data.add(MainBean("协程", CoroutineActivity::class.java))
         data.add(MainBean("RxJava", CoroutineActivity::class.java))
-        data.add(MainBean("热修复", CoroutineActivity::class.java))
+        data.add(MainBean("热修复", BannerActivity::class.java))
         data.add(MainBean("组件化", CoroutineActivity::class.java))
         data.add(MainBean("Lifecycle的使用", LifecycleActivity::class.java))
         data.add(MainBean("LiveDataViewModel的使用", LiveDataViewModelActivity::class.java))
